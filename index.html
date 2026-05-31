@@ -392,6 +392,63 @@
     flex:0 0 18%;
   }
 }
+
+
+/* ================= VIDEO POPUP ================= */
+
+.video-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:99999;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.video-modal.active{
+  display:flex;
+}
+
+.video-modal-content{
+  width:95%;
+  max-width:1100px;
+  position:relative;
+}
+
+.video-modal iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border:none;
+  border-radius:12px;
+}
+
+.modal-close{
+  position:absolute;
+  top:-50px;
+  right:0;
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:50%;
+  background:#fac400;
+  color:black;
+  font-size:22px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.modal-close:hover{
+  background:white;
+}
+
+/* Shorts Popup */
+
+.video-modal.vertical iframe{
+  aspect-ratio:9/16;
+  max-height:85vh;
+}
   </style>
 </head>
 
@@ -848,37 +905,37 @@ const shortVideos = [
 
   {
     title: "Why Did the Graves Open When Jesus Died? (Matthew 27 Mystery)",
-    link: "https://youtube.com/shorts/mwdaKlLl6aY",
+    link: "https://drive.google.com/file/d/1GqIteHLb2IXUlldMyi7V2mmrnqfHA7FM/view?usp=sharing",
     thumbnail: "https://img.youtube.com/vi/mwdaKlLl6aY/maxresdefault.jpg"
   },
 
   {
     title: "Why Was the Temple Veil Torn When Jesus Died? (Matthew 27 Mystery)",
-    link: "https://youtube.com/shorts/zoFOcsjq71M",
+    link: "https://drive.google.com/file/d/1skHmzq9_JGHdVq9niWikIbuZO7rY2aKZ/view?usp=sharing",
     thumbnail: "https://img.youtube.com/vi/zoFOcsjq71M/maxresdefault.jpg"
   },
 
   {
     title: 'Why did Jesus cry "My God, My God, why have You forsaken Me?" from the cross?',
-    link: "https://youtube.com/shorts/WS615y9EDU0",
+    link: "https://drive.google.com/file/d/15C-2ABwbbOw8mf1UV-gvP_g5zFUw40Vu/view?usp=sharing",
     thumbnail: "https://img.youtube.com/vi/WS615y9EDU0/maxresdefault.jpg"
   },
     
   {
     title: "What Did Jesus Do for 3 Days in the Grave?",
-    link: "https://youtube.com/shorts/PAigwlJAjOU",
+    link: "https://drive.google.com/file/d/1R4RxIKHy34S0cKYPx13y3VbvY39vy7HG/view?usp=sharing",
     thumbnail: "https://img.youtube.com/vi/PAigwlJAjOU/maxresdefault.jpg"
   },
     
   {
     title: "Why Did Blood and Water Come From Jesus' Side? (John 19 Mystery)",
-    link: "https://youtube.com/shorts/oAuzWo5wlVE",
+    link: "https://drive.google.com/file/d/1aLzPkjxDrkVmUr-g8rgdG12V8Eb6cfFv/view?usp=sharing",
     thumbnail: "https://img.youtube.com/vi/oAuzWo5wlVE/maxresdefault.jpg"
   },
     
   {
     title: "Why Did Jesus Weep If He Knew Lazarus Would Rise? (John 11 Mystery)",
-    link: "https://youtube.com/shorts/2WkmNphDYgI",
+    link: "https://drive.google.com/file/d/1DqRbq1YC2jPvFyGSbqA0pTJwrDTec9Q4/view?usp=sharing",
     thumbnail: "https://img.youtube.com/vi/2WkmNphDYgI/maxresdefault.jpg"
   },
 
@@ -929,11 +986,11 @@ shortsRow.innerHTML = shortVideos.map(video => `
 
   <div class="short-card">
 
-    <a
-      href="${video.link}"
-      target="_blank"
-      class="short-thumbnail-link"
-    >
+      <a
+        href="#"
+        class="short-thumbnail-link"
+        onclick="openVideo('${video.link}', true); return false;"
+      >
 
       <img
         src="${video.thumbnail}"
@@ -1021,13 +1078,13 @@ const subjects = [
     videos: [
       { title:"African Imam Hated Christians So Much He Beat Them Up", link:"https://youtu.be/C70DK9zlB_w", thumbnail:"https://img.youtube.com/vi/C70DK9zlB_w/maxresdefault.jpg" },
       { title:"Suicidal Islamic woman finds salvation in Jesus Christ", link:"https://drive.google.com/file/d/1aTVC-sX8f5YdLLoNs3I6j6boM6BPWFxi/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/qz38KW3_wfI/mqdefault.jpg" },
-      { title:"Risking It All For Jesus", link:"https://youtu.be/zeK6rQ3aWI8", thumbnail:"https://img.youtube.com/vi/zeK6rQ3aWI8/maxresdefault.jpg" },
+      { title:"From Burka to Born-Again - My Salvation Story _ Ayaan Hirsi Ali", link:"https://drive.google.com/file/d/1kQftGIrEN5kcqwEOen70mTWIprajEfLp/view?usp=sharing", thumbnail:"https://img.youtube.com/vi/zeK6rQ3aWI8/maxresdefault.jpg" },
       { title:"Devout Iranian Muslim Encounters Christ", link:"https://drive.google.com/file/d/1J3NJcVkeuU0REmWXcJTbb2WsmTCJmOCr/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/A0PVKJ-P6ok/mqdefault.jpg" },
       { title:"Miracles - Deaf Muslim Finds Jesus", link:"https://youtu.be/SI5C9v_LJ1s", thumbnail:"https://img.youtube.com/vi/SI5C9v_LJ1s/maxresdefault.jpg" },
       { title:"They set an Israeli pastor on fire in Arabia... but the way God saved him defies all logic", link:"https://youtu.be/bcpDtKeJ-F8", thumbnail:"https://img.youtube.com/vi/bcpDtKeJ-F8/maxresdefault.jpg" },
       { title:"How I Raised My First Dead Archbishop Benson Idahosa", link:"https://youtu.be/cgCHPPYoeyA", thumbnail:"https://img.youtube.com/vi/cgCHPPYoeyA/maxresdefault.jpg" },
       { title:"Former Islamic Terrorist meets Jesus - Powerful Testimony", link:"https://drive.google.com/file/d/1j6DmnIRkUmaui4b6jtKIv8fN4qv_1Jf9/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/w9uWwaWT65Y/mqdefault.jpg" },          
-      { title:"HOW THE ISIS SHOT ME 27 TIMES...And God Sent His Angels to Save Me", link:"https://youtu.be/BeELqU-A9YY", thumbnail:"https://img.youtube.com/vi/BeELqU-A9YY/maxresdefault.jpg" }, 
+      { title:"HOW THE ISIS SHOT ME 27 TIMES...And God Sent His Angels to Save Me", link:"https://drive.google.com/file/d/1LOHploC6KUEkDy2KLpVKKFZeM-VwA5b3/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/BeELqU-A9YY/maxresdefault.jpg" }, 
       { title:"Iranian stabbed for sharing his faith, miraculously made it across the border without a passport!", link:"https://youtu.be/yYnKNPoW9mc", thumbnail:"https://img.youtube.com/vi/yYnKNPoW9mc/maxresdefault.jpg" },      
       { title:"Saudi Princess Shared Between Brothers Until She PRAYED TO JESUS...", link:"https://youtu.be/KOb7FGuRX6Y", thumbnail:"https://img.youtube.com/vi/KOb7FGuRX6Y/maxresdefault.jpg" },
     ]
@@ -1038,7 +1095,7 @@ const subjects = [
     videos: [
       { title:"Dr David Ogbueli called out a man that spent 3days in hell to share the things he saw", link:"https://youtu.be/stJNduGzXlI", thumbnail:"https://img.youtube.com/vi/stJNduGzXlI/maxresdefault.jpg" }, 
       { title:"Fulani Muslim Confesses How Jesus Visited Him As The Imam Of Daura Mosque", link:"https://drive.google.com/file/d/1EKvAek5tNJbtA3VtExoFQafALW0JB6_d/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/Uttd_TdTcN0/mqdefault.jpg" },
-      { title:"I Was Radical As A Muslim. Jesus Set Me Free.", link:"https://youtu.be/EMNq9PQyYlA", thumbnail:"https://img.youtube.com/vi/EMNq9PQyYlA/maxresdefault.jpg" },
+      { title:"I Was Radical As A Muslim. Jesus Set Me Free.", link:"https://drive.google.com/file/d/16a-gC8uuuU6tkRcyMXK6C1mH3t9nZj66/view?usp=sharing", thumbnail:"https://img.youtube.com/vi/EMNq9PQyYlA/maxresdefault.jpg" },
       { title:"Buddhist Monk Died and Saw Hell", link:"https://youtu.be/hx2M1TrbQRw", thumbnail:"https://i.ytimg.com/vi/hx2M1TrbQRw/maxresdefault.jpg" },
       { title:"Nasir Siddiki on It's Supernatural with Sid Roth", link:"https://drive.google.com/file/d/16HOnQIPu0Qe9WKSud-vTHUutLIqW6z0A/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/52UChmWddW8/mqdefault.jpg" },      
       { title:"Lessons I Learned From My Father That Ushered Me Into Raising The Dead|Revd Dr Mosy Madugba", link:"https://youtu.be/Jp63DM7AKv8", thumbnail:"https://img.youtube.com/vi/Jp63DM7AKv8/mqdefault.jpg" },
@@ -1053,7 +1110,7 @@ const subjects = [
   {
     name: "The Circles In The Secular",
     videos: [
-      { title:"She Saw Biggie in Hell, Saw Heaven and God gave her A Chilling Word ~ Queen Okeoma", link:"https://youtu.be/8ik_U1jWcL8", thumbnail:"https://img.youtube.com/vi/8ik_U1jWcL8/maxresdefault.jpg" },            
+      { title:"She Saw Biggie in Hell, Saw Heaven and God gave her A Chilling Word ~ Queen Okeoma", link:"https://drive.google.com/file/d/1f4oZn_kMMX7RgP4ZqrybZG4aBeCYiz9t/view", thumbnail:"https://img.youtube.com/vi/8ik_U1jWcL8/maxresdefault.jpg" },            
       { title:"17 Year Girl Dies & What Jesus Revealed About SOCIAL MEDIA Will Shock You", link:"https://youtu.be/vIE70aC09hQ", thumbnail:"https://img.youtube.com/vi/vIE70aC09hQ/maxresdefault.jpg" },
       { title:"25-year-old shares testimony of heaven and hell", link:"https://youtu.be/2IXMaFXAx1A", thumbnail:"https://img.youtube.com/vi/2IXMaFXAx1A/maxresdefault.jpg" },     
       { title:"Former Lesbian Finds Jesus | Rosaria Butterfield's Set Free Story", link:"https://youtu.be/cJc0McjBo3o", thumbnail:"https://img.youtube.com/vi/cJc0McjBo3o/maxresdefault.jpg" },
@@ -1075,11 +1132,12 @@ const subjects = [
     videos: [
       { title:"Was Jesus Created? Was He Begotten?", link:"https://youtu.be/WY-b9fr-8d8?si=f3BzZs4zD_OMPc3t", thumbnail:"https://img.youtube.com/vi/WY-b9fr-8d8/maxresdefault.jpg" },
       { title:"What Jesus Himself Teaches About Salvation (II John 1:9) – Mike Mazzalongo", link:"https://youtu.be/yUu7HjiFDes", thumbnail:"https://img.youtube.com/vi/yUu7HjiFDes/maxresdefault.jpg" },
-      { title:"Why Believe Jesus Christ is God?", link:"https://youtu.be/I46JquDHdCQ", thumbnail:"https://img.youtube.com/vi/I46JquDHdCQ/maxresdefault.jpg" },      
+      { title:"Why Believe Jesus Christ is God?", link:"https://drive.google.com/file/d/1Xib2YtZmhF4AHU05w0Lf06P9ARPdtYpL/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/I46JquDHdCQ/maxresdefault.jpg" },      
       { title:"What Does God Want From You? – Mike Mazzalongo", link:"https://youtu.be/voG-n6k_-j0", thumbnail:"https://img.youtube.com/vi/voG-n6k_-j0/maxresdefault.jpg" },
       { title:"Baptism and the Holy Spirit (Acts 19:1-7) – Mike Mazzalongo", link:"https://youtu.be/Fh7QQV6eY6k", thumbnail:"https://img.youtube.com/vi/Fh7QQV6eY6k/maxresdefault.jpg" },
       { title:"The 4 Components of Saving Faith / Sermon – Mike Mazzalongo", link:"https://youtu.be/LoFMHeLruMo", thumbnail:"https://img.youtube.com/vi/LoFMHeLruMo/maxresdefault.jpg" },      
       { title:"True Love | Billy Graham Classic Sermon", link:"https://youtu.be/39kvqf-rl4k", thumbnail:"https://img.youtube.com/vi/39kvqf-rl4k/maxresdefault.jpg" }
+      { title:"Heaven and Hell -1000 to 1, by Pastor Park", link:"https://drive.google.com/file/d/1mz8g9r7aE5Ynx26c02dazhsZVYd0i6VT/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/2KccTSojyoo/maxresdefault.jpg" }
     ]
   },
 
@@ -1090,7 +1148,7 @@ const subjects = [
       { title:"The Gospel of Mark — Power, Miracles & Authority (Full Audio Reading)", link:"https://youtu.be/pP_RkiS8GsA", thumbnail:"https://img.youtube.com/vi/pP_RkiS8GsA/maxresdefault.jpg" },      
       { title:"The Gospel of John — Jesus The Light of the World — Contemporary English (FULL) With Text", link:"https://youtu.be/l1kQIiy-DZU", thumbnail:"https://img.youtube.com/vi/l1kQIiy-DZU/maxresdefault.jpg" },
       { title:"My Time in HEAVEN by Richard Sigmund", link:"https://youtu.be/DH9nXxIKxMY", thumbnail:"https://img.youtube.com/vi/DH9nXxIKxMY/maxresdefault.jpg" },      
-      { title:"Seeking Allah, Finding Jesus - Nabdeel Qureshi", link:"https://youtu.be/MuhcvUKIANk", thumbnail:"https://img.youtube.com/vi/MuhcvUKIANk/mqdefault.jpg" },  
+      { title:"Seeking Allah, Finding Jesus - Nabdeel Qureshi", link:"https://drive.google.com/file/d/1RbcL97aivuLC_JSsQ1ce9tlWRP5ZSA5C/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/MuhcvUKIANk/mqdefault.jpg" },  
       { title:"THE BELIEVER'S AUTHORITY | KENNETH HAGIN | COMPLETE CHAPTERS | AUDIO BOOK", link:"https://youtu.be/XA_Xfn0XWA0", thumbnail:"https://img.youtube.com/vi/XA_Xfn0XWA0/mqdefault.jpg" },
       { title:"The Book of Enoch - Full Audiobook With Text (Complete Version)", link:"https://youtu.be/vHn64W3eBQ8", thumbnail:"https://img.youtube.com/vi/vHn64W3eBQ8/mqdefault.jpg" },
       { title:"Humility: The Beauty of Holiness by Andrew Murray (Revised Audiobook)", link:"https://youtu.be/1GntwCeaMFs", thumbnail:"https://img.youtube.com/vi/1GntwCeaMFs/mqdefault.jpg" },
@@ -1132,7 +1190,11 @@ subjects.forEach((subject, index) => {
       <div class="video-row" id="${rowId}">
         ${subject.videos.map(video => `
           <div class="video-card">
-            <a href="${video.link}" target="_blank" class="thumbnail-link">
+            <a
+              href="#"
+              class="thumbnail-link"
+              onclick="openVideo('${video.link}'); return false;"
+            >
               <img src="${video.thumbnail}" class="thumbnail-image">
               <div class="play-button"></div>
             </a>
@@ -1208,6 +1270,138 @@ function downloadPage() {
   URL.revokeObjectURL(url);
 
 }
+</script>
+
+
+<!-- VIDEO POPUP -->
+
+<div id="videoModal" class="video-modal">
+
+  <div class="video-modal-content">
+
+    <button
+      class="modal-close"
+      onclick="closeVideo()"
+    >
+      ✕
+    </button>
+
+<iframe
+  id="videoPlayer"
+  allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* ================= VIDEO POPUP ================= */
+
+const modal =
+document.getElementById("videoModal");
+
+const player =
+document.getElementById("videoPlayer");
+
+function convertToEmbed(url){
+
+  const autoplay =
+  "?autoplay=1&rel=0&playsinline=1";
+
+  /* Normal YouTube */
+
+  if(url.includes("youtube.com/watch?v=")){
+
+    const id =
+    url.split("v=")[1].split("&")[0];
+
+    return `https://www.youtube.com/embed/${id}${autoplay}`;
+  }
+
+  /* YouTube Shorts */
+
+  if(url.includes("/shorts/")){
+
+    const id =
+    url.split("/shorts/")[1].split("?")[0];
+
+    return `https://www.youtube.com/embed/${id}${autoplay}`;
+  }
+
+  /* youtu.be */
+
+  if(url.includes("youtu.be/")){
+
+    const id =
+    url.split("youtu.be/")[1].split("?")[0];
+
+    return `https://www.youtube.com/embed/${id}${autoplay}`;
+  }
+
+  /* Google Drive */
+
+  if(url.includes("drive.google.com")){
+
+    const match =
+    url.match(/\/d\/(.*?)\//);
+
+    if(match){
+
+      return `https://drive.google.com/file/d/${match[1]}/preview`;
+    }
+  }
+
+  return url;
+}
+
+function openVideo(url,isShort=false){
+
+  modal.classList.add("active");
+
+  if(isShort){
+    modal.classList.add("vertical");
+  }
+  else{
+    modal.classList.remove("vertical");
+  }
+
+  player.src =
+  convertToEmbed(url);
+}
+
+function closeVideo(){
+
+  modal.classList.remove("active");
+
+  player.src = "";
+}
+
+/* Close when background clicked */
+
+modal.addEventListener("click",function(e){
+
+  if(e.target === modal){
+
+    closeVideo();
+  }
+
+});
+
+/* Escape key closes */
+
+document.addEventListener("keydown",function(e){
+
+  if(e.key==="Escape"){
+
+    closeVideo();
+  }
+
+});
+
 </script>
 </body>
 </html>
