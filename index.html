@@ -986,7 +986,7 @@ const shortVideos = [
     link: "https://youtube.com/shorts/rnY1f9xrm-E",
     thumbnail: "https://img.youtube.com/vi/rnY1f9xrm-E/maxresdefault.jpg"
   },
-  
+
   {
     title: "Who Are the Two Witnesses in Revelation 11?",
     link: "https://youtube.com/shorts/etaA054RLS4",
@@ -1095,7 +1095,7 @@ const subjects = [
     name: "Teasers",
     videos: [
       { title:"African Imam Hated Christians So Much He Beat Them Up", link:"https://youtu.be/C70DK9zlB_w", thumbnail:"https://img.youtube.com/vi/C70DK9zlB_w/maxresdefault.jpg" },
-      { title:"Suicidal Islamic woman finds salvation in Jesus Christ", link:"https://youtu.be/qz38KW3_wfI", thumbnail:"https://img.youtube.com/vi/qz38KW3_wfI/mqdefault.jpg" },
+      { title:"Suicidal Muslim woman finds salvation in Jesus Christ", link:"https://youtu.be/qz38KW3_wfI", thumbnail:"https://img.youtube.com/vi/qz38KW3_wfI/mqdefault.jpg" },
       { title:"From Burka to Born-Again - My Salvation Story _ Ayaan Hirsi Ali", link:"https://youtu.be/zeK6rQ3aWI8", thumbnail:"https://img.youtube.com/vi/zeK6rQ3aWI8/maxresdefault.jpg" },
       { title:"Devout Iranian Muslim Encounters Christ", link:"https://youtu.be/A0PVKJ-P6ok", thumbnail:"https://img.youtube.com/vi/A0PVKJ-P6ok/mqdefault.jpg" },
       { title:"Miracles - Deaf Muslim Finds Jesus", link:"https://youtu.be/SI5C9v_LJ1s", thumbnail:"https://img.youtube.com/vi/SI5C9v_LJ1s/maxresdefault.jpg" },
@@ -1165,7 +1165,7 @@ const subjects = [
       { title:"The Gospel of Matthew — The Teachings of Christ | Full Audio Bible with Text", link:"https://youtu.be/mgUWg3ZY_C8", thumbnail:"https://img.youtube.com/vi/mgUWg3ZY_C8/maxresdefault.jpg" },
       { title:"The Gospel of Mark — Power, Miracles & Authority (Full Audio Reading)", link:"https://youtu.be/pP_RkiS8GsA", thumbnail:"https://img.youtube.com/vi/pP_RkiS8GsA/maxresdefault.jpg" },      
       { title:"The Gospel of John — Jesus The Light of the World — Contemporary English (FULL) With Text", link:"https://youtu.be/l1kQIiy-DZU", thumbnail:"https://img.youtube.com/vi/l1kQIiy-DZU/maxresdefault.jpg" },
-      { title:"My Time in HEAVEN by Richard Sigmund", link:"https://youtu.be/DH9nXxIKxMY", thumbnail:"https://img.youtube.com/vi/DH9nXxIKxMY/maxresdefault.jpg" },      
+      { title:"My Time in HEAVEN by Richard Sigmund", link:"https://drive.google.com/file/d/1hEWt0BVAJKhgKn09y1aVU6hhdhkaQ69y/view", thumbnail:"https://img.youtube.com/vi/DH9nXxIKxMY/maxresdefault.jpg" },      
       { title:"Seeking Allah, Finding Jesus - Nabdeel Qureshi", link:"https://drive.google.com/file/d/1RbcL97aivuLC_JSsQ1ce9tlWRP5ZSA5C/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/MuhcvUKIANk/mqdefault.jpg" },  
       { title:"THE BELIEVER'S AUTHORITY | KENNETH HAGIN | COMPLETE CHAPTERS | AUDIO BOOK", link:"https://youtu.be/XA_Xfn0XWA0", thumbnail:"https://img.youtube.com/vi/XA_Xfn0XWA0/mqdefault.jpg" },
       { title:"The Book of Enoch - Full Audiobook With Text (Complete Version)", link:"https://youtu.be/vHn64W3eBQ8", thumbnail:"https://img.youtube.com/vi/vHn64W3eBQ8/mqdefault.jpg" },
@@ -1376,19 +1376,27 @@ function convertToEmbed(url){
   return url;
 }
 
-function openVideo(url,isShort=false){
+function openVideo(url, isShort = false){
 
+  // Detect mobile device
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+  // If mobile AND Google Drive video
+  if(isMobile && url.includes("drive.google.com")){
+    window.open(url, "_blank");
+    return;
+  }
+
+  // Existing popup behavior
   modal.classList.add("active");
 
   if(isShort){
     modal.classList.add("vertical");
-  }
-  else{
+  }else{
     modal.classList.remove("vertical");
   }
 
-  player.src =
-  convertToEmbed(url);
+  player.src = convertToEmbed(url);
 }
 
 function closeVideo(){
