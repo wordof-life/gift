@@ -1137,7 +1137,7 @@ const subjects = [
       { title:"Baptism and the Holy Spirit (Acts 19:1-7) – Mike Mazzalongo", link:"https://youtu.be/Fh7QQV6eY6k", thumbnail:"https://img.youtube.com/vi/Fh7QQV6eY6k/maxresdefault.jpg" },
       { title:"The 4 Components of Saving Faith / Sermon – Mike Mazzalongo", link:"https://youtu.be/LoFMHeLruMo", thumbnail:"https://img.youtube.com/vi/LoFMHeLruMo/maxresdefault.jpg" },      
       { title:"True Love | Billy Graham Classic Sermon", link:"https://youtu.be/39kvqf-rl4k", thumbnail:"https://img.youtube.com/vi/39kvqf-rl4k/maxresdefault.jpg" },
-      { title:"Heaven and Hell -1000 to 1, by Pastor Park", link:"https://drive.google.com/file/d/1mz8g9r7aE5Ynx26c02dazhsZVYd0i6VT/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/2KccTSojyoo/maxresdefault.jpg" },
+      { title:"Heaven and Hell -1000 to 1, by Pastor Park", link:"https://drive.google.com/file/d/1mz8g9r7aE5Ynx26c02dazhsZVYd0i6VT/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/2KccTSojyoo/maxresdefault.jpg" }
     ]
   },
 
@@ -1357,6 +1357,51 @@ function convertToEmbed(url){
 
   return url;
 }
+
+function openVideo(url,isShort=false){
+
+  modal.classList.add("active");
+
+  if(isShort){
+    modal.classList.add("vertical");
+  }
+  else{
+    modal.classList.remove("vertical");
+  }
+
+  player.src =
+  convertToEmbed(url);
+}
+
+function closeVideo(){
+
+  modal.classList.remove("active");
+
+  player.src = "";
+}
+
+/* Close when background clicked */
+
+modal.addEventListener("click",function(e){
+
+  if(e.target === modal){
+
+    closeVideo();
+  }
+
+});
+
+/* Escape key closes */
+
+document.addEventListener("keydown",function(e){
+
+  if(e.key==="Escape"){
+
+    closeVideo();
+  }
+
+});
+
 </script>
 </body>
 </html>
