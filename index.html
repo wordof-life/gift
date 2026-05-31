@@ -396,58 +396,32 @@
 
 /* ================= VIDEO POPUP ================= */
 
-.video-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.92);
-  z-index:99999;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-
-.video-modal.active{
-  display:flex;
-}
-
 .video-modal-content{
   width:95%;
   max-width:1100px;
   position:relative;
 }
 
+/* FIX RESPONSIVE VIDEO */
 .video-modal iframe{
   width:100%;
-  aspect-ratio:16/9;
+  height:80vh;              /* key fix for mobile */
+  max-height:80vh;
   border:none;
   border-radius:12px;
+  background:black;
 }
 
-.modal-close{
-  position:absolute;
-  top:-50px;
-  right:0;
-  width:42px;
-  height:42px;
-  border:none;
-  border-radius:50%;
-  background:#fac400;
-  color:black;
-  font-size:22px;
-  cursor:pointer;
-  font-weight:bold;
+/* MOBILE OPTIMIZATION */
+@media(max-width:768px){
+  .video-modal iframe{
+    height:60vh;            /* better fit on phones */
+  }
 }
-
-.modal-close:hover{
-  background:white;
-}
-
-/* Shorts Popup */
 
 .video-modal.vertical iframe{
   aspect-ratio:9/16;
-  max-height:85vh;
+  height:85vh;
 }
   </style>
 </head>
@@ -1309,48 +1283,33 @@ document.getElementById("videoPlayer");
 
 function convertToEmbed(url){
 
-  const autoplay =
-  "?autoplay=1&mute=1&rel=0&playsinline=1";
-
-  /* Normal YouTube */
+  let videoId = null;
 
   if(url.includes("youtube.com/watch?v=")){
-
-    const id =
-    url.split("v=")[1].split("&")[0];
-
-    return `https://www.youtube.com/embed/${id}${autoplay}`;
+    videoId = url.split("v=")[1].split("&")[0];
   }
 
-  /* YouTube Shorts */
-
-  if(url.includes("/shorts/")){
-
-    const id =
-    url.split("/shorts/")[1].split("?")[0];
-
-    return `https://www.youtube.com/embed/${id}${autoplay}`;
+  else if(url.includes("/shorts/")){
+    videoId = url.split("/shorts/")[1].split("?")[0];
   }
 
-  /* youtu.be */
-
-  if(url.includes("youtu.be/")){
-
-    const id =
-    url.split("youtu.be/")[1].split("?")[0];
-
-    return `https://www.youtube.com/embed/${id}${autoplay}`;
+  else if(url.includes("youtu.be/")){
+    videoId = url.split("youtu.be/")[1].split("?")[0];
   }
 
-  /* Google Drive */
+  if(videoId){
+    return `https://www.youtube.com/embed/${videoId}
+    ?autoplay=1
+    &rel=0
+    &playsinline=1
+    &controls=1
+    `.replace(/\s+/g,'');
+  }
 
+  // Google Drive FIXED mobile playback
   if(url.includes("drive.google.com")){
-
-    const match =
-    url.match(/\/d\/(.*?)\//);
-
+    const match = url.match(/\/d\/(.*?)\//);
     if(match){
-
       return `https://drive.google.com/file/d/${match[1]}/preview`;
     }
   }
@@ -1358,19 +1317,25 @@ function convertToEmbed(url){
   return url;
 }
 
-function openVideo(url,isShort=false){
+
+function openVideo(url, isShort = false){
 
   modal.classList.add("active");
 
-  if(isShort){
-    modal.classList.add("vertical");
-  }
-  else{
-    modal.classList.remove("vertical");
-  }
+  modal.classList.toggle("vertical", isShort);
 
-  player.src =
-  convertToEmbed(url);
+  const embedUrl = convertToEmbed(url);
+
+  player.src = "";
+
+  setTimeout(() => {
+
+    player.src = embedUrl;
+
+    // Try to force sound enable (works on some Android browsers)
+    player.setAttribute("allow", "autoplay; encrypted-media; fullscreen; picture-in-picture");
+
+  }, 80);
 }
 
 function closeVideo(){
