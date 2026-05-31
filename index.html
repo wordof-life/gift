@@ -1310,7 +1310,7 @@ document.getElementById("videoPlayer");
 function convertToEmbed(url){
 
   const autoplay =
-  "?autoplay=1&rel=0&playsinline=1";
+  "?autoplay=1&mute=1&rel=0&playsinline=1";
 
   /* Normal YouTube */
 
@@ -1357,51 +1357,6 @@ function convertToEmbed(url){
 
   return url;
 }
-
-function openVideo(url,isShort=false){
-
-  modal.classList.add("active");
-
-  if(isShort){
-    modal.classList.add("vertical");
-  }
-  else{
-    modal.classList.remove("vertical");
-  }
-
-  player.src =
-  convertToEmbed(url);
-}
-
-function closeVideo(){
-
-  modal.classList.remove("active");
-
-  player.src = "";
-}
-
-/* Close when background clicked */
-
-modal.addEventListener("click",function(e){
-
-  if(e.target === modal){
-
-    closeVideo();
-  }
-
-});
-
-/* Escape key closes */
-
-document.addEventListener("keydown",function(e){
-
-  if(e.key==="Escape"){
-
-    closeVideo();
-  }
-
-});
-
 </script>
 </body>
 </html>
