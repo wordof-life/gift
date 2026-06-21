@@ -730,6 +730,9 @@
       <a href="#" onclick="goToSection('nineth'); return false;"
          style="color:#fb923c;" class="icon-phone" title="Mobile">📱</a>
 
+      <a href="#" onclick="goToSection('eleventh'); return false;"
+         style="color:#fb923c;" class="icon-script" title="script">📜</a>
+
     </div>
   </div>
 
@@ -941,8 +944,8 @@
 
 <section class="text-slider-section">
 
-  <h2 class="section-title">
-    Meditation On Scriptures
+  <h2 id="eleventh" class="section-title">
+    📜 Meditation On Scriptures
   </h2>
 
 <div class="text-row" id="textRow">
@@ -1625,8 +1628,12 @@ subjects.forEach((subject, index) => {
       section.id = "eighth";
   }
 
-  if(subject.name === "📱 Gospel Video Shorts"){
+  if(subject.name === "📱 Gospel Shorts"){
       section.id = "nineth";
+  }  
+
+  if(subject.name === "📜 Meditation On Scriptures"){
+      section.id = "eleventh";
   }
 
   if(subject.name === "⬇️ Download or Share ➤"){
