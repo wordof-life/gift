@@ -1442,6 +1442,7 @@ const subjects = [
       { title:"Former P*rn Star Finds Jesus | Brittni De La Mora's Set Free Story", link:"https://youtu.be/mzOMlCgcL1Q", thumbnail:"https://img.youtube.com/vi/mzOMlCgcL1Q/maxresdefault.jpg" },
       { title:"I Died & Jesus Revealed What Type of Sex Is Allowed in Marriage", link:"https://youtu.be/8sq6UIzCjCA", thumbnail:"https://img.youtube.com/vi/8sq6UIzCjCA/maxresdefault.jpg" },
       { title:"Scariest Hell Testimony EVER", link:"https://youtu.be/18Os663dF0U", thumbnail:"https://img.youtube.com/vi/18Os663dF0U/mqdefault.jpg" },
+      { title:"VOODOO RITUALS, LOOKING FOR LOVE, FINDING JESUS | Testimony #338", link:"https://youtu.be/AtnJlNqdjjM", thumbnail:"https://img.youtube.com/vi/AtnJlNqdjjM/maxresdefault.jpg" },
       { title:"Michael & The Satanist: 'The Devil Told Me To Do It' | John Ramirez", link:"https://youtu.be/I4-H7fQInmg", thumbnail:"https://img.youtube.com/vi/I4-H7fQInmg/mqdefault.jpg" },   
       { title:"BLOOD Gang Member Gives His Life to JESUS!", link:"https://youtu.be/KQDEcFxuvug", thumbnail:"https://img.youtube.com/vi/KQDEcFxuvug/mqdefault.jpg" },
       { title:"From Lesbianism, Witchcraft and Pain to Following JESUS!", link:"https://youtu.be/w3-KLgUnVGs", thumbnail:"https://img.youtube.com/vi/w3-KLgUnVGs/maxresdefault.jpg" },      
@@ -1707,7 +1708,7 @@ function move(rowId, direction){
 </script>
 
 
-<!-- script for Shorts -->
+<!-- Text for Shorts -->
 
 <script>
   /* ================= SHORT VIDEOS ================= */
@@ -1847,24 +1848,58 @@ shortsRow.innerHTML += shortsRow.innerHTML;
 
 
 
-/* ================= SCROLL SHORTS ================= */
+/* ================= ONE SLIDE SHORT VIDEO MOVEMENT ================= */
+
+
+let shortsPosition = 0;
 
 function moveShorts(direction){
 
-  const cardWidth =
-    shortsRow.querySelector(".short-card").offsetWidth + 16;
+  const row = document.getElementById("shortsRow");
 
-  shortsRow.scrollLeft += direction * cardWidth;
+  const card = row.querySelector(".short-card");
 
-  const limit = shortsRow.scrollWidth / 2;
 
-  if(shortsRow.scrollLeft >= limit){
-    shortsRow.scrollLeft = 0;
+  if(!card) return;
+
+  // Get exact width including gap
+  const slideWidth =
+  card.getBoundingClientRect().width + 16;
+
+
+  shortsPosition += direction;
+
+
+  const totalSlides =
+  shortVideos.length;
+
+
+  // Infinite forward loop
+
+  if(shortsPosition >= totalSlides){
+
+      shortsPosition = 0;
+
   }
 
-  if(shortsRow.scrollLeft <= 0){
-    shortsRow.scrollLeft = limit;
+
+  // Infinite backward loop
+
+  if(shortsPosition < 0){
+
+      shortsPosition = totalSlides - 1;
+
   }
+
+
+  row.scrollTo({
+
+      left:
+      shortsPosition * slideWidth,
+
+      behavior:"smooth"
+
+  });
 
 }
 </script>
@@ -1873,34 +1908,87 @@ function moveShorts(direction){
 <!-- Script for Text Loop -->
 <script>
 
-/* ================= TEXT LOOP ================= */
+/* ================= ONE SLIDE TEXT MOVEMENT ================= */
+
 
 const textRow = document.getElementById("textRow");
 
-/* duplicate for infinite effect */
+
+// Duplicate for infinite effect
 textRow.innerHTML += textRow.innerHTML;
+
+
+
+let textPosition = 0;
+
+
 
 function moveText(direction){
 
-  const cardWidth =
-    textRow.querySelector(".text-card").offsetWidth + 16;
 
-  textRow.scrollLeft += direction * cardWidth;
+  const row = document.getElementById("textRow");
 
-  const limit = textRow.scrollWidth / 2;
 
-  if(textRow.scrollLeft >= limit){
-    textRow.scrollLeft = 0;
+  const card = row.querySelector(".text-card");
+
+
+  if(!card) return;
+
+
+
+  // Get exact card width + gap
+
+  const slideWidth =
+  card.getBoundingClientRect().width + 16;
+
+
+
+  textPosition += direction;
+
+
+
+  // Original number of cards
+
+  const totalSlides =
+  row.children.length / 2;
+
+
+
+  // Move forward
+
+  if(textPosition >= totalSlides){
+
+      textPosition = 0;
+
   }
 
-  if(textRow.scrollLeft <= 0){
-    textRow.scrollLeft = limit;
+
+
+  // Move backward
+
+  if(textPosition < 0){
+
+      textPosition = totalSlides - 1;
+
   }
+
+
+
+  row.scrollTo({
+
+      left:
+      textPosition * slideWidth,
+
+      behavior:"smooth"
+
+  });
+
 
 }
 
-</script>
 
+
+</script>
 
 
 <!-- script for downloading page -->
@@ -2123,5 +2211,6 @@ function copyLink(){
 <script>
   
 </script>
+
 </body>
 </html>
