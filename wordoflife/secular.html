@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+  <title>🏆 Best Gift Of A Lifetime 🎁</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    header{
+      text-align:center;
+      padding:10px 10px;
+      background: #0e192b;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    header h1{
+      font-size:2rem;
+      color:#38bdf8;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #fac400;
+    }
+
+.intro-text{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    width:100%;
+    max-width:100%;
+    padding:1em;
+}
+
+.scripture-column,
+.video-column{
+    min-width:0;
+}
+
+/*Heading Video Slider Styling*/
+.video-slider-wrapper{
+  width:100%;
+  overflow:hidden;
+  border-radius:16px;
+}
+
+.video-slider{
+  display:flex;
+  width:100%;
+  transition: transform 0.45s ease;
+}
+
+.video-slide{
+  flex:0 0 100%;
+  min-width:100%;
+}
+
+.video-slide .video-card{
+  margin:0; /* keeps it flush inside the slide */
+}
+
+.video-wrapper{
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.video-wrapper iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+@media (max-width:768px){
+
+    .intro-text{
+        grid-template-columns:1fr;
+    }
+
+    .video-column{
+        grid-row:1;
+    }
+
+    .scripture-column{
+        grid-row:2;
+    }
+
+}
+
+    h1, h2, h4{
+      color: #fac400;
+      padding-top: 1rem;
+      padding-bottom: 0.7rem;
+    }
+
+    .catalogue-section{
+      padding:25px 15px;
+    }
+
+    .section-title{
+      font-size:1.5rem;
+      margin-bottom:15px;
+      color:#fac400 !important;
+      padding-left:5px;
+    }
+
+    .video-row-wrapper{
+      position:relative;
+    }
+
+    .video-row{
+      display:flex;
+      gap:16px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      scrollbar-width:none;
+      padding-bottom:10px;
+    }
+
+    .video-row::-webkit-scrollbar{
+      display:none;
+    }
+
+    .video-card{
+      flex:0 0 85%;
+      background:#1e293b;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,0.4);
+      transition:transform 0.3s ease;
+    }
+
+    .video-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .thumbnail-link{
+      text-decoration:none;
+      color:white;
+      display:block;
+      position:relative;
+    }
+
+    .thumbnail-image{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* Play Button */
+    .play-button{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:70px;
+      height:70px;
+      background:rgba(0,0,0,0.7);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:0.3s;
+    }
+
+    .play-button::before{
+      content:'▶';
+      font-size:28px;
+      color:white;
+      margin-left:5px;
+    }
+
+    .thumbnail-link:hover .play-button{
+      background:#38bdf8;
+      transform:translate(-50%, -50%) scale(1.1);
+    }
+
+    .video-info{
+      padding:12px;
+    }
+
+    .video-info h3{
+      font-size:1rem;
+      line-height:1.4;
+      color:#e2e8f0;
+    }
+
+    /* Tablet */
+    @media(min-width:768px){
+      .video-card{
+        flex:0 0 32%;
+      }
+    }
+
+    /* PC */
+    @media(min-width:1024px){
+      .video-card{
+        flex:0 0 24%;
+      }
+    }
+
+    .hint-text{
+      font-size:0.9rem;
+      color:#94a3b8;
+      margin-top:8px;
+      padding-left:5px;
+    }
+
+    /*Scroll Function*/
+    .scroll-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:12px;
+}
+
+.scroll-btn{
+  padding:7px 10px;
+  border:none;
+  border-radius:10px;
+  background:#38bdf8;
+  color:white;
+  cursor:pointer;
+  font-size:0.95rem;
+  transition:0.3s;
+  font-weight:bold;
+}
+
+.scroll-btn:hover{
+  background:#0ea5e9;
+  transform:scale(1.05);
+}
+
+/*Download Page Styling*/
+.download-btn{
+  margin-top:15px;
+  padding:7px 10px;
+  border:none;
+  border-radius:10px;
+  background:#fac400;
+  color:black;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:0.3s;
+  font-weight:bold;
+}
+
+.download-btn:hover{
+  background:#16a34a;
+  transform:scale(0.9);
+}
+
+/* ================= TEXT SLIDER ================= */
+
+.text-slider-section{
+  padding:25px 15px 40px;
+}
+
+.text-row{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding-bottom:10px;
+}
+
+.text-row::-webkit-scrollbar{
+  display:none;
+}
+
+.text-card{
+  flex:0 0 85%;
+  min-height:300px;
+  background:linear-gradient(135deg,#1e293b,#0f172a);
+  border-radius:16px;
+  border:2px solid #38bdf8;
+  padding:5px 10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.5);
+  transition:0.3s;
+}
+
+.text-card:hover{
+  transform:translateY(-5px);
+  border-color:#fac400;
+}
+
+.text-card h2{
+  color:#38bdf8;
+  font-size:1rem;
+  margin-bottom:12px;
+  line-height:1;
+}
+
+.text-card h4{
+  color:#fac400;
+  font-size:1rem;
+  margin-bottom:18px;
+}
+
+.text-card p{
+  color:#e2e8f0;
+  line-height:1.4;
+  font-size:1rem;
+}
+
+.scripture{
+  margin-bottom:18px;
+  padding:16px;
+  background:rgba(255,255,255,0.06);
+  border-left:4px solid #38bdf8;
+  border-radius:10px;
+  font-style:italic;
+  color:#f8fafc;
+  line-height:1.4;
+  font-size:0.97rem;
+}
+
+/* Tablet */
+@media(min-width:768px){
+  .text-card{
+    flex:0 0 32%;
+  }
+}
+
+/* PC */
+@media(min-width:1024px){
+  .text-card{
+    flex:0 0 24%;
+  }
+}
+
+.center-button{
+  margin:15px auto;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border:none;
+  border-radius:10px;
+  font-size:0.98rem;
+  cursor:pointer;
+  text-decoration: none;
+  transition:0.3s;
+  font-weight:bold;
+}
+.center-button a{
+  text-decoration: none;
+  color: black;
+}
+.center-button:hover{
+  text-decoration: none;
+  color: black;
+  background: #44EE00;
+}
+
+/*Shorts Segment*/
+.shorts-row{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+}
+
+.shorts-row::-webkit-scrollbar{
+  display:none;
+}
+
+.short-card{
+  flex:0 0 70%;
+  background:#1e293b;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+.short-thumbnail{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+}
+
+.short-thumbnail-link{
+  position:relative;
+  display:block;
+}
+
+.short-play-button{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  background:rgba(0,0,0,.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.short-play-button::before{
+  content:"▶";
+  color:white;
+  font-size:26px;
+}
+
+.short-info{
+  padding: 6px;
+}
+
+@media(min-width:768px){
+  .short-card{
+    flex:0 0 32%;
+  }
+}
+
+@media(min-width:1024px){
+  .short-card{
+    flex:0 0 18%;
+  }
+}
+
+
+/* ================= VIDEO POPUP ================= */
+
+.video-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:99999;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.video-modal.active{
+  display:flex;
+}
+
+.video-modal-content{
+  width:95%;
+  max-width:1100px;
+  position:relative;
+}
+
+.video-modal iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border:none;
+  border-radius:12px;
+}
+
+.modal-close{
+  position:absolute;
+  top:-50px;
+  right:0;
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:50%;
+  background:#fac400;
+  color:black;
+  font-size:22px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.modal-close:hover{
+  background:white;
+}
+
+/* Shorts Popup */
+
+.video-modal.vertical iframe{
+  aspect-ratio:9/16;
+  max-height:85vh;
+}
+
+@keyframes softBounce {
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+.bounce-heading{
+  text-align:center;
+  color:#FAC400;
+  text-transform:capitalize;
+  animation:softBounce 1s ease-in-out infinite;
+}
+
+/* 🏠 */
+.icon-home{
+    color:#ffffff;
+}
+
+.icon-home:hover{
+    color: goldenrod;
+    transform:scale(1.15);
+}
+
+/* ☪ */
+.icon-islam{
+    color:#00d084;
+}
+
+.icon-islam:hover{
+    color:#33ff99;
+    transform:scale(1.15);
+}
+
+/* ✝ */
+.icon-cross{
+    color:#ffffff;
+
+    /* Glow */
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 15px #fac400,
+      0 0 25px #fac400;
+}
+
+.icon-cross:hover{
+    color:#fac400;
+    text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #fac400,
+      0 0 35px #fac400;
+    transform:scale(1.15);
+}
+
+/* ॐ */
+.icon-om{
+    color:#ff9933;
+}
+
+.icon-om:hover{
+    color:#ffbb66;
+    transform:scale(1.15);
+}
+
+/* ================= ACTION BUTTONS ROW ================= */
+
+.action-row-wrapper{
+  position:relative;
+  padding:10px 15px;
+}
+
+.action-row{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;        /* horizontal scroll */
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding-bottom:6px;
+  -webkit-overflow-scrolling:touch; /* 👈 smooth momentum on iOS */
+}
+
+.action-row::-webkit-scrollbar{
+  display:none;
+}
+
+.action-btn{
+  flex:0 0 240px;        /* slightly wider than before */
+  min-width:240px;
+  text-align:center;
+  padding:16px 14px;
+  border:none;
+  border-radius:14px;
+  font-size:0.92rem;      /* slightly smaller to help fit */
+  font-weight:bold;
+  cursor:pointer;
+  text-decoration:none;
+  color:white;
+  white-space:nowrap;     /* 👈 this is the key line — keeps text on one line */
+  overflow:hidden;
+  text-overflow:ellipsis; /* if it's still too long, show "..." instead of breaking */
+  transition:transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow:0 4px 14px rgba(0,0,0,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.action-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+.btn-blue{
+  background:linear-gradient(135deg,#38bdf8,#1d4ed8);
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,#fde047,#fac400);
+  color:#1a1a1a;
+}
+
+.btn-green{
+  background:linear-gradient(135deg,#34d399,#059669);
+}
+
+.btn-indigo{
+  background:linear-gradient(135deg,#818cf8,#4f46e5);
+}
+
+.btn-pink{
+  background:linear-gradient(135deg,#f472b6,#db2777);
+}
+
+.btn-teal{
+  background:linear-gradient(135deg,#2dd4bf,#0d9488);
+}
+
+/* Tablet & up: show 3 buttons */
+@media(min-width:768px){
+  .action-btn{
+    flex:0 0 calc(33.333% - 11px);
+  }
+}
+
+/* Desktop: show ~4-5 buttons */
+@media(min-width:1024px){
+  .action-btn{
+    flex:0 0 calc(20% - 13px);
+  }
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.logo::-webkit-scrollbar {
+  display: none;
+}
+
+.logo-track {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  padding: 4px 8px;
+  margin: 0 auto;
+  min-width: 100%;           /* stretches to fill header on desktop */
+  width: max-content;        /* grows to fit all icons on mobile */
+  justify-content: center;   /* centers when there's room */
+}
+
+.logo a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 44px;
+  margin-right: 4px;
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo" id="logoScroller">
+    <div class="logo-track" id="logoTrack">
+      <!-- ======= ORIGINAL SET ======= -->
+
+      <a href="#" onclick="goToSection('home'); return false;"
+         style="color:#ffffff;" class="icon-home" title="Home">🏡</a>
+
+      <a href="#" onclick="goToSection('tenth'); return false;"
+         style="color:#fac400;" class="icon-arrowdown" title="Download">⬇</a>
+
+      <a href="#" onclick="goToSection('first'); return false;"
+         style="color:#00ff99;" class="icon-islam" title="Islam To Jesus">☪</a>
+
+      <a href="#" onclick="goToSection('second'); return false;"
+         style="color:#ff6666;" class="icon-om" title="From Hinduism To Jesus">ॐ</a>
+
+      <a href="#" onclick="goToSection('fourth'); return false;"
+         style="color:#4ade80;" class="icon-globe" title="Circles of The Circular">🌍</a>
+
+      <a href="#" onclick="goToSection('fifth'); return false;"
+         style="color:#fde047;" class="icon-cross" title="Scriptures">✝</a>
+
+      <a href="#" onclick="goToSection('sixth'); return false;"
+         style="color:#38bdf8;" class="icon-headphone" title="Audio">📖</a>
+
+      <a href="#" onclick="goToSection('seventh'); return false;"
+         style="color:#c084fc;" class="icon-music" title="Music">🎵</a>
+
+      <a href="#" onclick="goToSection('eighth'); return false;"
+         style="color:#ffffff;" class="icon-wing" title="Spirit">🩺</a>
+
+      <a href="#" onclick="goToSection('nineth'); return false;"
+         style="color:#fb923c;" class="icon-phone" title="Mobile">📱</a>
+
+      <a href="#" onclick="goToSection('eleventh'); return false;"
+         style="color:#fb923c;" class="icon-script" title="script">📜</a>
+
+    </div>
+  </div>
+
+  <h2>
+    <a href="https://wordof-life.github.io/gift/"
+       style="color:white; text-decoration:none;">
+      📖 Gospel & Salvation💡
+    </a>
+  </h2>
+
+</header>
+
+<div>
+
+  <div class="intro-text" id="home">
+
+    <!-- Left Column -->
+    <div class="scripture-column">
+
+      <h1>Do You Know That God Loves You?</h1>
+
+      <p>
+        The Gospel (Bible) Says in <b>John 14:1-6,</b> "Jesus Said:<br>
+
+        1 Let not your heart be troubled: ye believe in God, believe also in me.<br><br>
+
+        2 In my Father's house are many mansions: if it were not so, I would have told you. I go to prepare a place for you.<br><br>
+
+        3 And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.<br><br>
+
+        4 And whither I go ye know, and the way ye know.<br><br>
+
+        5 Thomas saith unto him, Lord, we know not whither thou goest; and how can we know the way?<br><br>
+
+        6 Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.”
+      </p>
+
+    </div>
+
+    <!-- Right Column -->
+    <div class="video-column">
+      <h2 style="text-align: center;">But, who is God to you?</h2>
+      <div class="video-slider-wrapper">
+        <div class="video-slider" id="introVideoSlider">
+
+          <!-- Slide 7 -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://youtu.be/e2QuMZcRul0'); return false;">
+                <img src="https://img.youtube.com/vi/e2QuMZcRul0/maxresdefault.jpg"
+                     class="thumbnail-image"
+                     alt='This “Futbol Star” Was asked to Sell His Soul w/ Khallil Lambin'>
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  This “Futbol Star” Was asked to Sell His Soul w/ Khallil Lambin
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide i -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://youtu.be/8PhVFAYVPKY'); return false;">
+                <img src="https://img.youtube.com/vi/8PhVFAYVPKY/maxresdefault.jpg"
+                     class="thumbnail-image"
+                     alt="Muslim Boy Has A Message For The World">
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  Click To Watch This 👆
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide ii -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://youtu.be/Uttd_TdTcN0'); return false;">
+                <img src="https://img.youtube.com/vi/Uttd_TdTcN0/mqdefault.jpg"
+                     class="thumbnail-image"
+                     alt="Fulani Muslim Confesses How Jesus Visited Him As The Imam Of Daura Mosque">
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  Fulani Muslim Confesses How Jesus Visited Him As The Imam Of Daura Mosque
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 1 -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://youtu.be/YLFcr06nkPU'); return false;">
+                <img src="https://img.youtube.com/vi/qz38KW3_wfI/mqdefault.jpg"
+                     class="thumbnail-image"
+                     alt="Suicidal Woman Finds Healing and Salvation through Jesus Christ">
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  Suicidal Woman Finds Healing and Salvation through Jesus Christ
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://youtu.be/stJNduGzXlI'); return false;">
+                <img src="https://img.youtube.com/vi/stJNduGzXlI/maxresdefault.jpg"
+                     class="thumbnail-image"
+                     alt="Dr David Ogbueli called out a man that spent 3days in hell to share the things he saw">
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  Dr David Ogbueli called out a man that spent 3days in hell to share the things he saw
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://drive.google.com/file/d/1oyy16PZsXUSXU-8Y0IV89dG6kuq3m_kc/view?usp=drive_link'); return false;">
+                <img src="https://img.youtube.com/vi/zPlIxXVOibo/maxresdefault.jpg"
+                     class="thumbnail-image"
+                     alt="Satanist & Warlock Encounters Jesus">
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  Satanist & Warlock Encounters Jesus
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://youtu.be/18Os663dF0U'); return false;">
+                <img src="https://img.youtube.com/vi/18Os663dF0U/mqdefault.jpg"
+                     class="thumbnail-image"
+                     alt="Scariest Hell Testimony EVER">
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  Scariest Hell Testimony EVER
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://youtu.be/pcWpAQ2mWsw'); return false;">
+                <img src="https://i.ytimg.com/vi/hx2M1TrbQRw/maxresdefault.jpg"
+                     class="thumbnail-image"
+                     alt="Buddhist Monk Died and Saw Hell">
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  Buddhist Monk Died and Saw Hell
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="video-slide">
+            <div class="video-card scripture-video-card">
+              <a href="#" class="thumbnail-link"
+                 onclick="openVideo('https://youtu.be/0J4svGtlJb8'); return false;">
+                <img src="https://img.youtube.com/vi/0J4svGtlJb8/maxresdefault.jpg"
+                     class="thumbnail-image"
+                     alt='I Asked Jesus: "Where is Muhammad?" (He Did This)'>
+                <div class="play-button"></div>
+              </a>
+              <div class="video-info">
+                <h3 style="text-align:center;color:#fac400">
+                  I Asked Jesus: "Where is Muhammad?" (He Did This)
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add as many .video-slide blocks as you like -->
+
+        </div>
+      </div>
+
+      <!-- Slide controls -->
+      <div class="scroll-buttons">
+        <button class="scroll-btn" onclick="moveIntroSlider(-1)">⬅ Prev</button>
+        <button class="scroll-btn" onclick="moveIntroSlider(1)">Next ➡</button>
+      </div>
+
+    </div>
+    
+  </div>
+    
+</div>
+
+<br>
+
+</div>
+
+
+<h1 class="bounce-heading">Please Watch These 👇</h1>
+
+<!-- Body Containing Sliding Videos -->
+<div id="catalogue"></div>
+<!-- Body Containing Sliding Videos -->
+
+
+<!-- Short Videos Slider -->
+<section class="shorts-section">
+
+  <h2 id="nineth" class="section-title">
+    📱 Gospel Shorts
+  </h2>
+
+  <div class="shorts-row" id="shortsRow"></div>
+
+  <div class="scroll-buttons">
+
+    <button class="scroll-btn" onclick="moveShorts(-1)">
+      ⬅ Prev
+    </button>
+
+    <button class="scroll-btn" onclick="moveShorts(1)">
+      Next ➡
+    </button>
+
+  </div>
+
+</section>
+<!-- Short Videos Slider -->
+
+
+<!-- ================= TEXT SLIDER SECTION ================= -->
+
+<section class="text-slider-section">
+
+  <h2 id="eleventh" class="section-title">
+    📜 Meditation On Scriptures
+  </h2>
+
+<div class="text-row" id="textRow">
+
+
+
+
+<!-- CARD 1 -->
+<div class="text-card">
+
+  <h2>
+    Jesus Saves
+  </h2>
+
+  <h4>
+    Salvation Through Christ
+  </h4>
+
+  <div class="scripture">
+
+    <strong>John 3:16</strong><br><br>
+
+    “For God so loved the world, that he gave his only begotten Son,
+    that whosoever believeth in him should not perish,
+    but have everlasting life.”
+
+  </div>
+
+  <p>
+    Jesus Christ came into the world to save sinners and give eternal life to everyone who believes in Him.
+  </p>
+
+</div>
+
+  
+<!-- CARD 2 -->
+<div class="text-card">
+
+  <h2>
+    Jesus is our Witness
+  </h2>
+
+  <h4>
+    Our Faithful Withness
+  </h4>
+
+  <div class="scripture">
+
+    <strong>Revelations 1:4-6</strong><br><br>
+
+    “4 John, to the seven churches which are in Asia:<br>
+Grace to you and peace from Him who is and who was and who is to come, and from the seven Spirits who are before His throne, <br>
+5 and from Jesus Christ, the faithful witness, the firstborn from the dead, and the ruler over the kings of the earth.<br>
+To Him who loved us and washed us from our sins in His own blood, <br>
+6 and has made us kings and priests to His God and Father, to Him be glory and dominion forever and ever. Amen.”
+
+  </div>
+
+  <p>
+    Jesus Christ has conquered all sin through His blood.
+  </p>
+
+</div>
+
+
+  
+<!-- CARD 3 -->
+<div class="text-card">
+
+  <h2>
+    Jesus The Way To The Father
+  </h2>
+
+  <h4>
+    Know the Way and You Won't Be Lost
+  </h4>
+
+  <div class="scripture">
+
+    <strong>John 14:5-7</strong><br><br>
+
+    “5 Thomas said to him, 'Lord, we don’t know where you are going, so how can we know the way?'<br>
+
+6 Jesus answered, 'I am the way and the truth and the life. <br>
+No one comes to the Father except through me. <br>
+7 If you really know me, you will know my Father as well. From now on, you do know him and have seen him.'”
+
+  </div>
+
+  <p>
+    Jesus Calls Himself the "Way to the Only Father".
+  </p>
+
+</div>
+
+
+
+  
+<!-- CARD 4 -->
+<div class="text-card">
+
+  <h2>
+    Jesus Sanctifies
+  </h2>
+
+  <h4>
+    The Blood of Jesus Washes Us From Sin
+  </h4>
+
+  <div class="scripture">
+
+    <strong>Hebrews 13:12-14</strong><br><br>
+
+    “12 Therefore Jesus also, that He might sanctify the people with His own blood, suffered outside the gate.<br> 
+    13 Therefore let us go forth to Him, outside the camp, bearing His reproach. <br>
+    14 For here we have no continuing city, but we seek the one to come.”
+
+  </div>
+
+  <p>
+    Jesus Christ suffered so humanity could receive healing and peace.
+  </p>
+
+</div>
+
+  
+<!-- CARD 5 -->
+<div class="text-card">
+
+  <h2>
+    Eternal Life ~ Guaranteed by Jesus
+  </h2>
+
+  <h4>
+    Eternal life comes as a gift through Jesus Christ our Lord.
+  </h4>
+
+  <div class="scripture">
+
+    <strong>Romans 6:23</strong><br><br>
+
+    “But the gift of God is eternal life through Jesus Christ our Lord.”
+
+  </div>
+
+  <p>
+    Jesus assured all who will believe on Him and Follow Him of eternal life both on earth and in the life afterwards
+  </p>
+
+</div>
+
+
+  
+<!-- CARD 6 -->
+<div class="text-card">
+
+  <h2>
+    Jesus Saves
+  </h2>
+
+  <h4>
+    Salvation Through Christ
+  </h4>
+
+  <div class="scripture">
+
+    <strong>John 3:16</strong><br><br>
+
+    “For God so loved the world, that he gave his only begotten Son,
+    that whosoever believeth in him should not perish,
+    but have everlasting life.”
+
+  </div>
+
+  <p>
+    Jesus Christ came into the world to save sinners and give eternal life to everyone who believes in Him.
+  </p>
+
+</div>
+
+
+
+<!-- CARD 7 -->
+<div class="text-card">
+
+  <h2>
+    Repent and Believe
+  </h2>
+
+  <h4>
+    Turn Back To God
+  </h4>
+
+  <div class="scripture">
+
+    <strong>Acts 3:19</strong><br><br>
+
+    “Repent ye therefore, and be converted, that your sins may be blotted out,
+    when the times of refreshing shall come from the presence of the Lord.”
+
+  </div>
+
+  <p>
+    True repentance brings transformation, forgiveness, and restoration through the mercy and grace of God.
+  </p>
+
+</div>
+
+
+<!-- CARD 8 -->
+<div class="text-card">
+
+  <h2>
+    Source Of Salvation
+  </h2>
+
+  <h4>
+    No Other Source But Jesus
+  </h4>
+
+  <div class="scripture">
+
+    <strong>Acts 4:12</strong><br><br>
+
+    “Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved.”
+
+  </div>
+
+  <p>
+    True repentance brings transformation, forgiveness, and restoration through the mercy and grace of God.
+  </p>
+
+</div>
+
+
+
+<!-- CARD 9 -->
+<div class="text-card">
+
+  <h2>
+    Faith Over Fear
+  </h2>
+
+  <h4>
+    Trust God Completely
+  </h4>
+
+  <div class="scripture">
+
+    <strong>2 Timothy 1:7</strong><br><br>
+
+    “For God hath not given us the spirit of fear;
+    but of power, and of love, and of a sound mind.”
+
+  </div>
+
+  <p>
+    Fear limits progress, but faith in God releases courage, confidence, strength, and peace in difficult situations.
+  </p>
+
+</div>
+
+
+
+<!-- CARD 10 -->
+<div class="text-card">
+
+  <h2>
+    Walk In Love
+  </h2>
+
+  <h4>
+    Love One Another
+  </h4>
+
+  <div class="scripture">
+
+    <strong>John 13:34</strong><br><br>
+
+    “A new commandment I give unto you,
+    That ye love one another; as I have loved you,
+    that ye also love one another.”
+
+  </div>
+
+  <p>
+    The love of Christ should reflect in our actions, words, attitudes, and daily relationships with others.
+  </p>
+
+</div>
+
+
+
+<!-- CARD 11 -->
+<div class="text-card">
+
+  <h2>
+    Power Of Prayer
+  </h2>
+
+  <h4>
+    Stay Connected To God
+  </h4>
+
+  <div class="scripture">
+
+    <strong>Jeremiah 33:3</strong><br><br>
+
+    “Call unto me, and I will answer thee,
+    and shew thee great and mighty things,
+    which thou knowest not.”
+
+  </div>
+
+  <p>
+    Prayer strengthens believers, builds intimacy with God, and opens doors for divine intervention and miracles.
+  </p>
+
+</div>
+
+
+
+<!-- CARD 12 -->
+<div class="text-card">
+
+  <h2>
+    New Life In Christ
+  </h2>
+
+  <h4>
+    Become A New Creation
+  </h4>
+
+  <div class="scripture">
+
+    <strong>2 Corinthians 5:17</strong><br><br>
+
+    “Therefore if any man be in Christ,
+    he is a new creature:
+    old things are passed away;
+    behold, all things are become new.”
+
+  </div>
+
+  <p>
+    Through Christ, every believer can experience a transformed life filled with hope, purpose, peace, and victory.
+  </p>
+
+</div>
+
+</div>
+
+
+
+  <!-- SCROLL BUTTONS -->
+
+  <div class="scroll-buttons">
+
+    <button class="scroll-btn" onclick="moveText(-1)">
+      ⬅ Prev
+    </button>
+
+    <button class="scroll-btn" onclick="moveText(1)">
+      Next ➡
+    </button>
+
+  </div>
+
+<div id="last" style="padding-top: 15px; padding-bottom: 25px;">
+
+  <h2 id="tenth" style="color: #ffffff; text-align: center; margin-top: 1.5em;">
+    ⬇︎ Download or Share ➤
+  </h2>
+
+  <div class="action-row-wrapper">
+    <div class="action-row" id="actionRow">
+
+      <a href="https://wordof-life.github.io/gift/" class="action-btn btn-blue">
+        👁️ View Online Version ⬆️
+      </a>
+
+      <button class="action-btn btn-gold" onclick="downloadPage()">
+         ⬇ Download Offline Version 🏆
+      </button>
+
+      <a href="https://wa.me/?text=Check%20out%20this%20Gospel%20site%3A%20https://wordof-life.github.io/gift/" target="_blank" class="action-btn btn-green">
+        💬 Share on WhatsApp
+      </a>
+
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://wordof-life.github.io/gift/" target="_blank" class="action-btn btn-indigo">
+        📘 Share on Facebook
+      </a>
+
+      <button class="action-btn btn-pink" onclick="copyLink()">
+        🔗 Copy Page Link
+      </button>
+
+      <button class="action-btn btn-teal" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        ⬆️ Back To Top
+      </button>
+
+    </div>
+  </div>
+
+<div class="scroll-buttons">
+  <button class="scroll-btn" onclick="moveActions(-1)">⬅ Prev</button>
+  <button class="scroll-btn" onclick="moveActions(1)">Next ➡</button>
+</div>
+
+</div>
+</section>
+
+  <!-- Heading 1 Column Slider -->
+  <script>
+    let introSliderIndex = 0;
+
+  function moveIntroSlider(direction){
+    const slider = document.getElementById("introVideoSlider");
+    const slides = slider.querySelectorAll(".video-slide");
+    const total = slides.length;
+
+    introSliderIndex += direction;
+
+    // Loop back around at either end
+    if(introSliderIndex < 0) introSliderIndex = total - 1;
+    if(introSliderIndex >= total) introSliderIndex = 0;
+
+    slider.style.transform = `translateX(-${introSliderIndex * 100}%)`;
+  }
+  </script>
+
+<!-- Full Video Sliders -->
+<script>
+const subjects = [
+  {
+    name: "☪ From Islam To Jesus",
+    videos: [
+      { title:"African Imam Hated Christians So Much He Beat Them Up", link:"https://youtu.be/C70DK9zlB_w", thumbnail:"https://img.youtube.com/vi/C70DK9zlB_w/maxresdefault.jpg" },
+      { title:"Miracles - Deaf Muslim Finds Jesus", link:"https://youtu.be/SI5C9v_LJ1s", thumbnail:"https://img.youtube.com/vi/SI5C9v_LJ1s/maxresdefault.jpg" },
+      { title:"Former Jihadist Encounters Jesus | An interview with Pastor Isa El-Buba", link:"https://youtu.be/2oo8tvizyZA", thumbnail:"https://img.youtube.com/vi/2oo8tvizyZA/maxresdefault.jpg" },
+      { title:"Muslims Revived From Death Tell Chilling Truth Behind Allah & Islam", link:"https://drive.google.com/file/d/1lA1NiKD_0bv83AVmmd5lwFbUJBveTBSb/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/mMr7qH7kf_A/maxresdefault.jpg" },
+      { title:"Nasir Siddiki on It's Supernatural with Sid Roth", link:"https://youtu.be/52UChmWddW8", thumbnail:"https://img.youtube.com/vi/52UChmWddW8/mqdefault.jpg" }, 
+      { title:"Why Believe Jesus Christ is God?", link:"https://drive.google.com/file/d/1Xib2YtZmhF4AHU05w0Lf06P9ARPdtYpL/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/I46JquDHdCQ/maxresdefault.jpg" },
+      { title:"I Was Radical As A Muslim. Jesus Set Me Free.", link:"https://drive.google.com/file/d/16a-gC8uuuU6tkRcyMXK6C1mH3t9nZj66/", thumbnail:"https://img.youtube.com/vi/EMNq9PQyYlA/maxresdefault.jpg" },
+      { title:'I Asked Jesus: "Where is Muhammad?" (He Did This)', link:"https://youtu.be/0J4svGtlJb8", thumbnail:"https://img.youtube.com/vi/0J4svGtlJb8/maxresdefault.jpg" },
+      { title:"Muslim Woman Goes Viral for Shocking Testimony - 'I PRAYED JOHN 14:6 & JESUS HEALED MY CANCER'", link:"https://youtu.be/6xsX5aQCOic", thumbnail:"https://img.youtube.com/vi/6xsX5aQCOic/maxresdefault.jpg" },
+      { title:"Fulani Muslim Confesses How Jesus Visited Him As The Imam Of Daura Mosque", link:"https://youtu.be/Uttd_TdTcN0", thumbnail:"https://img.youtube.com/vi/Uttd_TdTcN0/mqdefault.jpg" },
+      { title:"Devout Iranian Muslim Encounters Christ", link:"https://youtu.be/A0PVKJ-P6ok", thumbnail:"https://img.youtube.com/vi/A0PVKJ-P6ok/mqdefault.jpg" },
+      { title:"From Burka to Born-Again - My Salvation Story _ Ayaan Hirsi Ali", link:"https://youtu.be/zeK6rQ3aWI8", thumbnail:"https://img.youtube.com/vi/zeK6rQ3aWI8/maxresdefault.jpg" },
+      { title:"Former Islamic Terrorist meets Jesus - Powerful Testimony", link:"https://drive.google.com/file/d/1j6DmnIRkUmaui4b6jtKIv8fN4qv_1Jf9/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/w9uWwaWT65Y/mqdefault.jpg" },          
+      { title:"She Escapes Islam, Almost Dies then finds Christ w/ Hafsa A.", link:"https://youtu.be/z-0Ak_jAO7c", thumbnail:"https://img.youtube.com/vi/z-0Ak_jAO7c/maxresdefault.jpg" },          
+      { title:"Ex-Hamas Wife Encounters Jesus in a Miraculous Dream", link:"https://youtu.be/Avl4vRkjbS8", thumbnail:"https://img.youtube.com/vi/Avl4vRkjbS8/maxresdefault.jpg" },          
+      { title:"They set an Israeli pastor on fire in Arabia... but the way God saved him defies all logic", link:"https://youtu.be/bcpDtKeJ-F8", thumbnail:"https://img.youtube.com/vi/bcpDtKeJ-F8/maxresdefault.jpg" },
+      { title:"Satanist & Warlock Encounters Jesus", link:"https://drive.google.com/file/d/1oyy16PZsXUSXU-8Y0IV89dG6kuq3m_kc/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/zPlIxXVOibo/maxresdefault.jpg" },  
+      { title:"AP.James Kawalya'S Wife Speaks Out The Truth About Her Husband's Accusations PS.Juliet Kawalya", link:"https://youtu.be/rVfshoE_MWY", thumbnail:"https://img.youtube.com/vi/rVfshoE_MWY/maxresdefault.jpg" },  
+      { title:"HOW THE ISIS SHOT ME 27 TIMES...And God Sent His Angels to Save Me", link:"https://drive.google.com/file/d/1LOHploC6KUEkDy2KLpVKKFZeM-VwA5b3/view", thumbnail:"https://img.youtube.com/vi/BeELqU-A9YY/maxresdefault.jpg" }, 
+      { title:"Orthodox Jew Has An Incredible Encounter With Yeshua!", link:"https://youtu.be/pSn1kOTQLcU", thumbnail:"https://img.youtube.com/vi/pSn1kOTQLcU/maxresdefault.jpg" },
+      { title:"Kareem was raised for Jihad, until he saw the risen King!  SHARE this powerful Testimony!", link:"https://youtu.be/RNU6Kmc9zYA", thumbnail:"https://img.youtube.com/vi/RNU6Kmc9zYA/mqdefault.jpg" },
+      { title:"Muslim Woman Dies & Returns with SHOCKING Message of Muhammad’s Birth!", link:"https://youtu.be/ATfetHyRcTw", thumbnail:"https://img.youtube.com/vi/ATfetHyRcTw/maxresdefault.jpg" },
+      { title:"Iranian stabbed for sharing his faith, miraculously made it across the border without a passport!", link:"https://youtu.be/yYnKNPoW9mc", thumbnail:"https://img.youtube.com/vi/yYnKNPoW9mc/maxresdefault.jpg" },      
+      { title:"Seeking Allah, Finding Jesus - Nabdeel Qureshi", link:"https://drive.google.com/file/d/1RbcL97aivuLC_JSsQ1ce9tlWRP5ZSA5C/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/MuhcvUKIANk/mqdefault.jpg" }, 
+    ]
+  },
+
+  {
+    name: "ॐ From Hinduism To Jesus",
+    videos: [
+      { title:"Buddhist Monk Died and Saw Hell", link:"https://youtu.be/hx2M1TrbQRw", thumbnail:"https://i.ytimg.com/vi/hx2M1TrbQRw/maxresdefault.jpg" },
+      { title:"EX- HINDU ENCOUNTERS JESUS IN HER ROOM - EVERYTHING CHANGED", link:"https://youtu.be/Zs9tiHQleCY", thumbnail:"https://img.youtube.com/vi/Zs9tiHQleCY/maxresdefault.jpg" },
+      { title:"A Voice Woke Him at 4AM and Said 3 Words", link:"https://youtu.be/vU1ZX3rhbMg", thumbnail:"https://img.youtube.com/vi/vU1ZX3rhbMg/maxresdefault.jpg" }, 
+      { title:"As a Hindu, I Found Jesus Offensive", link:"https://youtu.be/8Z_BLUXylc4", thumbnail:"https://img.youtube.com/vi/8Z_BLUXylc4/maxresdefault.jpg" },
+      { title:"Former BUDDHIST Gives His Life to Jesus & Speaks Out! | Testimony 329", link:"https://youtu.be/wkKUz9YU8CE", thumbnail:"https://img.youtube.com/vi/wkKUz9YU8CE/maxresdefault.jpg" },
+      { title:"A Hindu Encounters the Risen Jesus - Srishti Gupta", link:"https://youtu.be/yxtK6ZAV7j0", thumbnail:"https://img.youtube.com/vi/yxtK6ZAV7j0/maxresdefault.jpg" },
+      { title:"Why a Hindu Priest Left the Religion to Follow Christ", link:"https://youtu.be/09n8WRCcb78", thumbnail:"https://img.youtube.com/vi/09n8WRCcb78/maxresdefault.jpg" },
+      { title:"Vani Marshall Testimony", link:"https://youtu.be/PT3jeoqwR6w", thumbnail:"https://img.youtube.com/vi/PT3jeoqwR6w/maxresdefault.jpg" },
+      { title:"Why This Man Left Hinduism to Follow Jesus", link:"https://youtu.be/Y1rOXzwNyYo", thumbnail:"https://img.youtube.com/vi/Y1rOXzwNyYo/maxresdefault.jpg" },
+      { title:"Near Death Experience: Hindu Priest's Son Dies—Sees Heaven's Gates & Lake of Fire: SAVED", link:"https://youtu.be/Utcf052XGx8", thumbnail:"https://img.youtube.com/vi/Utcf052XGx8/maxresdefault.jpg" },
+      { title:"Buddhist Monk Dies & Discovers TRUTH About Reincarnation from Jesus!", link:"https://youtu.be/FS8ZR92gPRc", thumbnail:"https://img.youtube.com/vi/FS8ZR92gPRc/maxresdefault.jpg" },
+      { title:"The Moment a Hindu Man Found Jesus", link:"https://youtu.be/p64_cQI97ww", thumbnail:"https://img.youtube.com/vi/p64_cQI97ww/maxresdefault.jpg" },
+      { title:"Hindu converts to Christianity ...explains why", link:"https://youtu.be/DbKxwkNkzjA", thumbnail:"https://img.youtube.com/vi/DbKxwkNkzjA/maxresdefault.jpg" },
+      { title:"Hindu Man Dies and Sees the Kingdom of Heaven", link:"https://youtu.be/C8yQwBLOU7g", thumbnail:"https://img.youtube.com/vi/C8yQwBLOU7g/maxresdefault.jpg" },
+      { title:"How a Hindu/Sikh student started following only Jesus|| Hinduism to Christianity|| Testimony", link:"https://youtu.be/Z9B99seCjOE", thumbnail:"https://img.youtube.com/vi/Z9B99seCjOE/mqdefault.jpg" },
+      { title:"I Was a Staunch Hindu & CHALLENGED Jesus... then THIS happened | Pastor Kosh Dahal's Testimony", link:"https://youtu.be/1jkwyxV6L9g", thumbnail:"https://img.youtube.com/vi/1jkwyxV6L9g/maxresdefault.jpg" },
+        
+    ]
+  },
+
+
+  {
+    name: "🌍 Circles in The Secular",
+    videos: [
+      { title:"She Saw Biggie in Hell, Saw Heaven and God gave her A Chilling Word ~ Queen Okeoma", link:"https://drive.google.com/file/d/1f4oZn_kMMX7RgP4ZqrybZG4aBeCYiz9t/view", thumbnail:"https://img.youtube.com/vi/8ik_U1jWcL8/maxresdefault.jpg" },  
+      { title:"Satanist & Warlock Encounters Jesus", link:"https://drive.google.com/file/d/1oyy16PZsXUSXU-8Y0IV89dG6kuq3m_kc/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/zPlIxXVOibo/maxresdefault.jpg" },  
+      { title:"17 Year Girl Dies & What Jesus Revealed About SOCIAL MEDIA Will Shock You", link:"https://youtu.be/vIE70aC09hQ", thumbnail:"https://img.youtube.com/vi/vIE70aC09hQ/maxresdefault.jpg" },
+      { title:"25-year-old shares testimony of heaven and hell", link:"https://youtu.be/2IXMaFXAx1A", thumbnail:"https://img.youtube.com/vi/2IXMaFXAx1A/maxresdefault.jpg" },     
+      { title:"From Freemasonry to Freedom: A Life Transformed by God (John Moscato's Testimony)", link:"https://youtu.be/eotRZpbAiZg", thumbnail:"https://img.youtube.com/vi/eotRZpbAiZg/maxresdefault.jpg" },
+      { title:"This “Futbol Star” Was asked to Sell His Soul w/ Khallil Lambin", link:"https://youtu.be/e2QuMZcRul0", thumbnail:"https://img.youtube.com/vi/e2QuMZcRul0/maxresdefault.jpg" },
+      { title:"Former Lesbian Finds Jesus | Rosaria Butterfield's Set Free Story", link:"https://youtu.be/cJc0McjBo3o", thumbnail:"https://img.youtube.com/vi/cJc0McjBo3o/maxresdefault.jpg" },
+      { title:"I Talked to Jesus for 1 Hour [He Answered My Hardest Question]", link:"https://youtu.be/sya2Lj5NsWw", thumbnail:"https://img.youtube.com/vi/sya2Lj5NsWw/maxresdefault.jpg" },
+      { title:"I Was Homeless And Hated God, Until This Happened…", link:"https://youtu.be/NpcF-1X0-ps", thumbnail:"https://img.youtube.com/vi/NpcF-1X0-ps/maxresdefault.jpg" },
+      { title:"Former P*rn Star Finds Jesus | Brittni De La Mora's Set Free Story", link:"https://youtu.be/mzOMlCgcL1Q", thumbnail:"https://img.youtube.com/vi/mzOMlCgcL1Q/maxresdefault.jpg" },
+      { title:"I Died & Jesus Revealed What Type of Sex Is Allowed in Marriage", link:"https://youtu.be/8sq6UIzCjCA", thumbnail:"https://img.youtube.com/vi/8sq6UIzCjCA/maxresdefault.jpg" },
+      { title:"Scariest Hell Testimony EVER", link:"https://youtu.be/18Os663dF0U", thumbnail:"https://img.youtube.com/vi/18Os663dF0U/mqdefault.jpg" },
+      { title:"VOODOO RITUALS, LOOKING FOR LOVE, FINDING JESUS | Testimony #338", link:"https://youtu.be/AtnJlNqdjjM", thumbnail:"https://img.youtube.com/vi/AtnJlNqdjjM/maxresdefault.jpg" },
+      { title:"I Went to Heaven as a Nonbeliever. What I Saw Amazed Me!", link:"https://youtu.be/Om_7BhuU9rg", thumbnail:"https://img.youtube.com/vi/Om_7BhuU9rg/maxresdefault.jpg" },
+      { title:"Michael & The Satanist: 'The Devil Told Me To Do It' | John Ramirez", link:"https://youtu.be/I4-H7fQInmg", thumbnail:"https://img.youtube.com/vi/I4-H7fQInmg/mqdefault.jpg" },   
+      { title:"BLOOD Gang Member Gives His Life to JESUS!", link:"https://youtu.be/KQDEcFxuvug", thumbnail:"https://img.youtube.com/vi/KQDEcFxuvug/mqdefault.jpg" },
+      { title:"I Hated God, Until this Happened...(Testimony)", link:"https://youtu.be/Y-2LaCPST9o", thumbnail:"https://img.youtube.com/vi/Y-2LaCPST9o/maxresdefault.jpg" },
+      { title:"From Lesbianism, Witchcraft and Pain to Following JESUS!", link:"https://youtu.be/w3-KLgUnVGs", thumbnail:"https://img.youtube.com/vi/w3-KLgUnVGs/maxresdefault.jpg" },      
+      { title:"I’m JEWISH and I Believe JESUS Is the Messiah! | Testimony #359", link:"https://youtu.be/025Jk0JQXHo", thumbnail:"https://img.youtube.com/vi/025Jk0JQXHo/maxresdefault.jpg" },
+      { title:"I Believed I Was A MAN, Until JESUS Did THIS...", link:"https://youtu.be/56SII58lVhE", thumbnail:"https://img.youtube.com/vi/56SII58lVhE/mqdefault.jpg" },
+      { title:"Jewish Woman Asked God: Is JESUS the Messiah? | Testimony #364", link:"https://youtu.be/Me_VBAAvCOM", thumbnail:"https://img.youtube.com/vi/Me_VBAAvCOM/maxresdefault.jpg" },
+      { title:"Orthodox Jew Has An Incredible Encounter With Yeshua!", link:"https://youtu.be/pSn1kOTQLcU", thumbnail:"https://img.youtube.com/vi/pSn1kOTQLcU/maxresdefault.jpg" },
+    ]
+  },
+
+  {
+    name: "🌤️ Gospel of Salvation & Healing",
+    videos: [
+      { title:"Was Jesus Created? Was He Begotten?", link:"https://youtu.be/WY-b9fr-8d8?si=f3BzZs4zD_OMPc3t", thumbnail:"https://img.youtube.com/vi/WY-b9fr-8d8/maxresdefault.jpg" },
+      { title:"Listen To John Chapter 12 (A Hint At Scriptures)", link:"https://youtu.be/gmg_FS_9aqY", thumbnail:"https://img.youtube.com/vi/gmg_FS_9aqY/maxresdefault.jpg" },
+      { title:"What Jesus Himself Teaches About Salvation (II John 1:9) – Mike Mazzalongo", link:"https://youtu.be/yUu7HjiFDes", thumbnail:"https://img.youtube.com/vi/yUu7HjiFDes/maxresdefault.jpg" },      
+      { title:"Dr David Ogbueli called out a man that spent 3days in hell to share the things he saw", link:"https://youtu.be/stJNduGzXlI", thumbnail:"https://img.youtube.com/vi/stJNduGzXlI/maxresdefault.jpg" }, 
+      { title:"What Does God Want From You? – Mike Mazzalongo", link:"https://youtu.be/voG-n6k_-j0", thumbnail:"https://img.youtube.com/vi/voG-n6k_-j0/maxresdefault.jpg" },
+      { title:'15 of My Pastors D*ed in One Go at a Crusade" | Rev. Samson Ajetomobi | Beneath the Surface', link:"https://youtu.be/1XfO-Nn9hgc", thumbnail:"https://img.youtube.com/vi/1XfO-Nn9hgc/maxresdefault.jpg" }, 
+      { title:"Baptism and the Holy Spirit (Acts 19:1-7) – Mike Mazzalongo", link:"https://youtu.be/Fh7QQV6eY6k", thumbnail:"https://img.youtube.com/vi/Fh7QQV6eY6k/maxresdefault.jpg" },
+      { title:'"Jesus Walked Ahead of Me": US Pilots 14-Hour Survival Story Behind Iranian Enemy Lines Goes Viral', link:"https://youtu.be/OY0irAuECmQ", thumbnail:"https://img.youtube.com/vi/OY0irAuECmQ/maxresdefault.jpg" },
+      { title:"The 4 Components of Saving Faith / Sermon – Mike Mazzalongo", link:"https://youtu.be/LoFMHeLruMo", thumbnail:"https://img.youtube.com/vi/LoFMHeLruMo/maxresdefault.jpg" },      
+      { title:"Heaven and Hell -1000 to 1, by Pastor Park", link:"https://drive.google.com/file/d/1mz8g9r7aE5Ynx26c02dazhsZVYd0i6VT/view?usp=drive_link", thumbnail:"https://img.youtube.com/vi/2KccTSojyoo/maxresdefault.jpg" },
+      { title:"How I Raised My First Dead Archbishop Benson Idahosa", link:"https://youtu.be/cgCHPPYoeyA", thumbnail:"https://img.youtube.com/vi/cgCHPPYoeyA/maxresdefault.jpg" },
+      { title:"My Time in HEAVEN by Richard Sigmund", link:"https://drive.google.com/file/d/1hEWt0BVAJKhgKn09y1aVU6hhdhkaQ69y/view", thumbnail:"https://img.youtube.com/vi/DH9nXxIKxMY/maxresdefault.jpg" }, 
+      { title:"True Love | Billy Graham Classic Sermon", link:"https://youtu.be/39kvqf-rl4k", thumbnail:"https://img.youtube.com/vi/39kvqf-rl4k/maxresdefault.jpg" },
+      { title:"How you can be led by the Spirit of God by Kenneth-E-Hagin", link:"https://youtu.be/jh7lCmFYiTs", thumbnail:"https://img.youtube.com/vi/jh7lCmFYiTs/maxresdefault.jpg" },
+      { title:"THE BELIEVER'S AUTHORITY | KENNETH HAGIN | COMPLETE CHAPTERS | AUDIO BOOK", link:"https://youtu.be/XA_Xfn0XWA0", thumbnail:"https://img.youtube.com/vi/XA_Xfn0XWA0/mqdefault.jpg" },
+      { title:"Humility: The Beauty of Holiness by Andrew Murray (Revised Audiobook)", link:"https://youtu.be/1GntwCeaMFs", thumbnail:"https://img.youtube.com/vi/1GntwCeaMFs/mqdefault.jpg" },
+      { title:"I Spent 3 Hours Face to Face with Jesus…", link:"https://youtu.be/4d2BO2uRbsg", thumbnail:"https://img.youtube.com/vi/4d2BO2uRbsg/maxresdefault.jpg" },
+      { title:"Absolute Surrender | Andrew Murray", link:"https://youtu.be/Q6CueCi8o0I", thumbnail:"https://img.youtube.com/vi/Q6CueCi8o0I/maxresdefault.jpg" },
+      { title:"A NIGERIAN PASTOR WHO DIED FOR 3 DAYS AND GOD BROUGHT HIM BACK TO LIFE WITH A MESSAGE!", thumbnail:"https://img.youtube.com/vi/_sB3Sn71X4g/mqdefault.jpg" },
+      { title:"The Pursuit of God | A.W. Tozer", link:"https://youtu.be/ygb7vLPhpfc", thumbnail:"https://img.youtube.com/vi/ygb7vLPhpfc/maxresdefault.jpg" },
+      { title:"God Spoke to Me in Hell, What He Said Shocked Me!", link:"https://youtu.be/KpEQ72DwwS0", thumbnail:"https://img.youtube.com/vi/KpEQ72DwwS0/maxresdefault.jpg" },
+      { title:"Lessons I Learned From My Father That Ushered Me Into Raising The Dead | Revd Dr Mosy Madugba", link:"https://youtu.be/Jp63DM7AKv8", thumbnail:"https://img.youtube.com/vi/Jp63DM7AKv8/mqdefault.jpg" },
+      { title:"The Courts of Heaven (Covenants, Books of Destiny, & Bloodlines) w/Robert Henderson", link:"https://youtu.be/tWZHWh5fbVM", thumbnail:"https://img.youtube.com/vi/tWZHWh5fbVM/mqdefault.jpg" }, 
+      { title:"The Power of the Blood | Andrew Murray", link:"https://youtu.be/xY1wmfTwtfU", thumbnail:"https://img.youtube.com/vi/xY1wmfTwtfU/maxresdefault.jpg" },
+      { title:"Hear the Shocking Voice Note A Pastor from South Africa Sent to Apostle Arome On WhatsApp", link:"https://youtu.be/6OIovavSnrw", thumbnail:"https://img.youtube.com/vi/6OIovavSnrw/maxresdefault.jpg" },
+      { title:"With Christ in the School of Prayer | Andrew Murray", link:"https://youtu.be/JjVAqoGrQhY", thumbnail:"https://img.youtube.com/vi/JjVAqoGrQhY/maxresdefault.jpg" },
+      { title:"HOW I RAISED THE DEAD AND HEALED THE SICK WITHOUT PRAYING ||REV.MOSY MADUGBA", link:"https://youtu.be/S8lbJAE3KA0", thumbnail:"https://img.youtube.com/vi/S8lbJAE3KA0/maxresdefault.jpg" },
+      { title:"Rising Mantles & Generational Shifts with Rev Mosy Madugba", link:"https://youtu.be/OnJE3z7swIY", thumbnail:"https://img.youtube.com/vi/OnJE3z7swIY/maxresdefault.jpg" }, 
+      { title:"'Prayer Of Salvation | Salvation Prayer To Be Saved | Get Saved Right The First Time", link:"https://youtu.be/XdlhJiEDqJ8", thumbnail:"https://img.youtube.com/vi/XdlhJiEDqJ8/maxresdefault.jpg" }, 
+      { title:"The Power & Purpose of Intercession - Stephanie Okafor", link:"https://youtu.be/3LLSW8-e-Vw", thumbnail:"https://img.youtube.com/vi/3LLSW8-e-Vw/maxresdefault.jpg" }, 
+      { title:"Pain Stole Your Authority || Stephanie Okafor and Apostle Isi", link:"https://youtu.be/htOtYPi_UnU", thumbnail:"https://img.youtube.com/vi/htOtYPi_UnU/maxresdefault.jpg" }, 
+      { title:"CHAINED FALLEN ANGEL Sounds Recorded UNDERNEATH the Euphrates River | Euphrates River Drying Up 2022", link:"https://youtu.be/K-TeNz1E-Eg", thumbnail:"https://img.youtube.com/vi/K-TeNz1E-Eg/maxresdefault.jpg" }, 
+    ]
+  },
+
+  {
+    name: "📖 Audio Bible & Books 🎧",
+    videos: [
+      { title:"THE BOOK OF GENESIS (KJV) 📜 Story of Creation to Joseph | Full Audiobook With Text", link:"https://youtu.be/wtwDzmlzd9g", thumbnail:"https://img.youtube.com/vi/wtwDzmlzd9g/maxresdefault.jpg" },
+      { title:"THE BOOK OF EXODUS 📜 Escape From Egypt, 10 Commandments - Full Audiobook With Text", link:"https://youtu.be/AsW5N8WehcI", thumbnail:"https://img.youtube.com/vi/AsW5N8WehcI/maxresdefault.jpg" },
+      { title:"THE BOOK OF LEVITICUS 📜 Divine Laws, Rituals, Holiness - Full Audiobook With Text", link:"https://youtu.be/K0w78egcJJU", thumbnail:"https://img.youtube.com/vi/K0w78egcJJU/maxresdefault.jpg" },
+      { title:"THE BOOK OF NUMBERS 📜 Rebellion, Wandering, Miracles - Full Audiobook With Text", link:"https://youtu.be/-vjQN2VIfuc", thumbnail:"https://img.youtube.com/vi/-vjQN2VIfuc/maxresdefault.jpg" },      
+      { title:"BOOK OF DEUTERONOMY 📜 God’s Covenant, Justice, Governance - Full Audiobook With Text", link:"https://youtu.be/GimvIGqiNqY", thumbnail:"https://img.youtube.com/vi/GimvIGqiNqY/maxresdefault.jpg" },
+      { title:"The Moses Shapira Manuscript Scroll", link:"https://youtu.be/pSPw1gkQB3g", thumbnail:"https://img.youtube.com/vi/pSPw1gkQB3g/mqdefault.jpg" },
+      { title:"The Book of Job (KJV) 📜 Why Does God Allow Suffering? - Full Audiobook with Text", link:"https://youtu.be/1JrJuT3rF3I", thumbnail:"https://img.youtube.com/vi/1JrJuT3rF3I/maxresdefault.jpg" },
+      { title:"BOOK OF JOSHUA 📜 The Promised Land, Miraculous Victories - Full Audiobook With Text", link:"https://youtu.be/_RBGJIw3d1A", thumbnail:"https://img.youtube.com/vi/_RBGJIw3d1A/maxresdefault.jpg" },
+      { title:"BOOK OF JUDGES 📜 From Gideon to Samson: The Judges Who Led Israel - Full Audiobook With Text", link:"https://youtu.be/Udhcx_xyJyY", thumbnail:"https://img.youtube.com/vi/Udhcx_xyJyY/maxresdefault.jpg" },
+      { title:"BOOK OF RUTH 📜 A Story Of Loyalty, Kindness And Redemption - Full Audiobook With Text", link:"https://youtu.be/g-rv3-pNcqQ", thumbnail:"https://img.youtube.com/vi/g-rv3-pNcqQ/maxresdefault.jpg" },
+      { title:"BOOK OF 1 SAMUEL 📜 Battles, Kings, Prophetic Visions - Full Audiobook With Text", link:"https://youtu.be/UF8RicnFY5w", thumbnail:"https://img.youtube.com/vi/UF8RicnFY5w/maxresdefault.jpg" },
+      { title:"BOOK OF 2 SAMUEL 📜 Saul’s End, David’s Reign and Final Years - Full Audiobook With Text", link:"https://youtu.be/70Z1X_5gCrI", thumbnail:"https://img.youtube.com/vi/70Z1X_5gCrI/maxresdefault.jpg" },
+      { title:"1 KINGS 📜 King Solomon's Rise And Fall - Full Audiobook With Text", link:"https://youtu.be/TYzEW-UOocM", thumbnail:"https://img.youtube.com/vi/TYzEW-UOocM/maxresdefault.jpg" },
+      { title:"2 KINGS 📜 Elijah and Elisha, Israel's Downfall - Full Audiobook With Text", link:"https://youtu.be/jn8IDW5y-fs", thumbnail:"https://img.youtube.com/vi/jn8IDW5y-fs/maxresdefault.jpg" },
+      { title:"1 CHRONICLES 📜 Genealogies, Death of Saul, Rise of King David - Full Audiobook With Text", link:"https://youtu.be/iEctd14dGPE", thumbnail:"https://img.youtube.com/vi/iEctd14dGPE/maxresdefault.jpg" },
+      { title:"2 CHRONICLES 📜 Solomon's Reign, Rise and Fall of Judah's Kings - Full Audiobook With Text", link:"https://youtu.be/84qB2ZvwDf8", thumbnail:"https://img.youtube.com/vi/84qB2ZvwDf8/maxresdefault.jpg" },
+      { title:"THE BOOK OF EZRA 📜 Rebuilding Jerusalem’s Temple - Full Audiobook With Text", link:"https://youtu.be/jw5E9l4Nr20", thumbnail:"https://img.youtube.com/vi/jw5E9l4Nr20/maxresdefault.jpg" },
+      { title:"THE BOOK OF NEHEMIAH (KJV) 📜 The Rebuilding of Jerusalem | Full Audiobook With Text", link:"https://youtu.be/33thzuQtOec", thumbnail:"https://img.youtube.com/vi/33thzuQtOec/maxresdefault.jpg" },
+      { title:"1 ESDRAS | The Apocrypha | Full Audiobook With Text (KJV)", link:"https://youtu.be/rflfZEEA0TA", thumbnail:"https://img.youtube.com/vi/rflfZEEA0TA/maxresdefault.jpg" },
+      { title:"2 ESDRAS (KJV) Visions of the Apocalypse, End-times | The Apocrypha | Full Audiobook with Text", link:"https://youtu.be/1CvprHJUNLQ", thumbnail:"https://img.youtube.com/vi/1CvprHJUNLQ/maxresdefault.jpg" },
+      { title:"BOOK OF TOBIT 1 🌟 Excluded From The Bible | The Apocrypha | Full Audiobook With Text (KJV)", link:"https://youtu.be/T6nOBq38p7Q", thumbnail:"https://img.youtube.com/vi/T6nOBq38p7Q/maxresdefault.jpg" },
+      { title:"BOOK OF TOBIT 2 📜 The Strangest Story Removed From The Bible", link:"https://youtu.be/mRytNQc2wAQ", thumbnail:"https://img.youtube.com/vi/mRytNQc2wAQ/maxresdefault.jpg" },
+      { title:"BOOK OF JUDITH ⚔️ How One Woman Defeated An Army | The Apocrypha | Full Audiobook With Text (KJV)", link:"https://youtu.be/-N_rdKxJchc", thumbnail:"https://img.youtube.com/vi/-N_rdKxJchc/maxresdefault.jpg" },
+      { title:"THE BOOK OF ESTHER (KJV) 📜 The Plot Against The Jews | Full Audiobook With Text", link:"https://youtu.be/emoKUYmLMyI", thumbnail:"https://img.youtube.com/vi/emoKUYmLMyI/maxresdefault.jpg" },
+      { title:"ADDITIONS TO ESTHER 👑 Excluded From The Bible | The Apocrypha | Full Audiobook With Text (KJV)", link:"https://youtu.be/EIKLOykDXno", thumbnail:"https://img.youtube.com/vi/EIKLOykDXno/maxresdefault.jpg" },
+      { title:"BOOK OF PSALMS (KJV) 📜 The Bible's Ultimate Prayer Guide | Full Audiobook With Text", link:"https://youtu.be/aChFaPpaC6I", thumbnail:"https://img.youtube.com/vi/aChFaPpaC6I/maxresdefault.jpg" },
+      { title:"BOOK OF PROVERBS (KJV)📜 The Ultimate Guide to Wisdom - Full Audiobook With Text", link:"https://youtu.be/f_ryUI0zvJU", thumbnail:"https://img.youtube.com/vi/f_ryUI0zvJU/maxresdefault.jpg" },
+      { title:"WISDOM OF SOLOMON 🌟 The Missing Book Of Solomon | Full Audiobook With Text (KJV)", link:"https://youtu.be/Lr2bjN21NPw", thumbnail:"https://img.youtube.com/vi/Lr2bjN21NPw/maxresdefault.jpg" },
+      { title:"BOOK OF ECCLESIASTES 📜 The Search For Meaning, Vanity Of Life - Full Audiobook With Text", link:"https://youtu.be/tPvkvSDPwwQ", thumbnail:"https://img.youtube.com/vi/tPvkvSDPwwQ/maxresdefault.jpg" },
+      { title:"THE SONG OF SOLOMON (KJV) 📜 An Ancient Love Story - Full Audiobook with Text", link:"https://youtu.be/qS6oYQVt-j0", thumbnail:"https://img.youtube.com/vi/qS6oYQVt-j0/maxresdefault.jpg" },
+      { title:"BOOK OF ISAIAH (KJV) The Prophet Of Divine Judgment And Salvation | Full Audiobook With Text", link:"https://youtu.be/b3ONwENwPbo", thumbnail:"https://img.youtube.com/vi/b3ONwENwPbo/maxresdefault.jpg" },
+      { title:"The Book of Jeremiah 📜 Fall Of Jerusalem, Temple Destruction - Full Audiobook With Text", link:"https://youtu.be/oCsx_9a-5jA", thumbnail:"https://img.youtube.com/vi/oCsx_9a-5jA/maxresdefault.jpg" },
+      { title:"BOOK OF LAMENTATIONS 📜 Jeremiah's Poetic Mourning for Jerusalem - Full Audiobook With Text", link:"https://youtu.be/11SMhCarHw8", thumbnail:"https://img.youtube.com/vi/11SMhCarHw8/maxresdefault.jpg" },
+      { title:"The Lost Letter of Jeremiah EXCLUDED From Most Bibles", link:"https://youtu.be/DeYycBxoW3M", thumbnail:"https://img.youtube.com/vi/DeYycBxoW3M/maxresdefault.jpg" },
+      { title:"BOOK OF DANIEL 📜 Apocalyptic Visions, Prophecies, Lion's Den (KJV) - Full Audiobook With Text", link:"https://youtu.be/K1DCNeFdLYw", thumbnail:"https://img.youtube.com/vi/K1DCNeFdLYw/maxresdefault.jpg" },
+      { title:"BOOK OF DANIEL 📜 Apocalyptic Visions, Prophecies, Lion's Den (KJV) - Full Audiobook With Text", link:"https://youtu.be/K1DCNeFdLYw", thumbnail:"https://img.youtube.com/vi/K1DCNeFdLYw/maxresdefault.jpg" },
+      { title:"THE MINOR PROPHETS (KJV) Hosea - Malachi | Full Audiobook With Text", link:"https://youtu.be/RU3Dj6acP3w", thumbnail:"https://img.youtube.com/vi/RU3Dj6acP3w/maxresdefault.jpg" },
+      { title:"#1 THE LIFE OF ADAM AND EVE (Apocalypse of Moses) - Full Audiobook With Text", link:"https://youtu.be/15LdUn3w_Lc", thumbnail:"https://img.youtube.com/vi/15LdUn3w_Lc/maxresdefault.jpg" },
+      { title:"#2 FIRST AND SECOND BOOKS OF ADAM AND EVE (The Conflict with Satan) - Full Audiobook", link:"https://youtu.be/Uj1oPPLNhdA", thumbnail:"https://img.youtube.com/vi/Uj1oPPLNhdA/maxresdefault.jpg" },
+      { title:"THE APOCRYPHA 📜 12 Books Excluded From The Bible - Complete Audiobooks With Text", link:"https://youtu.be/uNrXJ-l04v4", thumbnail:"https://img.youtube.com/vi/uNrXJ-l04v4/maxresdefault.jpg" },
+      { title:"THE BOOK OF ENOCH 📜 The Ethiopian Bible | Complete Audiobook With Text - Read By Christopher Glyn", link:"https://youtu.be/KoAnlpegfTQ", thumbnail:"https://img.youtube.com/vi/KoAnlpegfTQ/maxresdefault.jpg" },
+      { title:"THE BOOK OF JUBILEES 📜 The Ethiopian Bible | Complete Audiobook With Text - Read By Christopher Glyn", link:"https://youtu.be/ZrQfqvY45a0", thumbnail:"https://img.youtube.com/vi/ZrQfqvY45a0/maxresdefault.jpg" },
+      { title:"THE BOOK OF JASHER 📜 Complete Audiobook With Text - Read By Christopher Glyn", link:"https://youtu.be/2lFg-WsvMwQ", thumbnail:"https://img.youtube.com/vi/2lFg-WsvMwQ/maxresdefault.jpg" },
+      { title:"The Lost Books of Jacob’s 12 Sons 📜 TESTAMENTS OF THE 12 PATRIARCHS | Full Audiobook With Text", link:"https://youtu.be/__qgFnDRR1c", thumbnail:"https://img.youtube.com/vi/__qgFnDRR1c/maxresdefault.jpg" },
+      { title:"The Apocalypse of Abraham 🔥 Idols, Azazel, The 7 Heavens - Full Audiobook with Text", link:"https://youtu.be/qwtwc9QhEx0", thumbnail:"https://img.youtube.com/vi/qwtwc9QhEx0/maxresdefault.jpg" },
+      { title:"THE WARS OF THE JEWS 🔥 The Disturbing Account of Prophecy Fulfilled - Full Audiobook", link:"https://youtu.be/dAxx9wt-yQY", thumbnail:"https://img.youtube.com/vi/dAxx9wt-yQY/maxresdefault.jpg" },
+      { title:"📜 GOSPEL OF MATTHEW ~ Miracles, Teachings, Prophecies - Full Audiobook With Text", link:"https://youtu.be/nI5TO9F2eLQ", thumbnail:"https://img.youtube.com/vi/nI5TO9F2eLQ/maxresdefault.jpg" },
+      { title:"📜 THE GOSPEL OF MARK ~ Parables, Healing, Resurrection - Full Audiobook With Text", link:"https://youtu.be/2niDS84pfYw", thumbnail:"https://img.youtube.com/vi/2niDS84pfYw/maxresdefault.jpg" },
+      { title:"📜 GOSPEL OF LUKE ~ Jesus’ Teachings, Power, Death and Resurrection - Full Audiobook With Text", link:"https://youtu.be/GYe_h6Qn-w0", thumbnail:"https://img.youtube.com/vi/GYe_h6Qn-w0/maxresdefault.jpg" },
+      { title:"📜 GOSPEL OF JOHN ~ Miraculous Signs, Spiritual Insights - Full Audiobook With Text", link:"https://youtu.be/LtpNw8RO6l8", thumbnail:"https://img.youtube.com/vi/LtpNw8RO6l8/maxresdefault.jpg" },
+      { title:"📜 BOOK OF ACTS (KJV) ~ Persecution, Visions and Miracles | Full Audiobook with Text", link:"https://youtu.be/HM1QaTHtrs4", thumbnail:"https://img.youtube.com/vi/HM1QaTHtrs4/maxresdefault.jpg" },
+      { title:"📜 The Epistles of Paul (Romans - Hebrews) KJV ~ Full Audiobook With Read-Along Text", link:"https://youtu.be/k3dwKfMJXf4", thumbnail:"https://img.youtube.com/vi/k3dwKfMJXf4/maxresdefault.jpg" },
+      { title:"📜 THE EPISTLES OF THE APOSTLES (KJV) ~ James - Jude | Full Audiobook With Text", link:"https://youtu.be/KrP58Oi-hZQ", thumbnail:"https://img.youtube.com/vi/KrP58Oi-hZQ/maxresdefault.jpg" },
+      { title:"📜 The Book of Revelation (KJV) ~ Full Audiobook with Read-Along Text", link:"https://youtu.be/uc_Ull5lJ0Y", thumbnail:"https://img.youtube.com/vi/uc_Ull5lJ0Y/maxresdefault.jpg" },
+      { title:"The Gospel Of Nicodemus (Christ's Descent Into Hell, Acts of Pilate) 📜 Full Audiobook With Text", link:"https://youtu.be/sFCuk-L8vjY", thumbnail:"https://img.youtube.com/vi/sFCuk-L8vjY/maxresdefault.jpg" },
+      { title:"The CONFESSION of Pontius Pilate 📜 Full Audiobook With Text", link:"https://youtu.be/kdbFugLQmcY", thumbnail:"https://img.youtube.com/vi/kdbFugLQmcY/maxresdefault.jpg" },
+    ]
+  },
+
+  {
+    name: "🎵 Songs",
+    videos: [
+      { title:"Hope Darst ~ Mighty Name Of Jesus", link:"https://youtu.be/CFfQFwjfTPY", thumbnail:"https://img.youtube.com/vi/CFfQFwjfTPY/maxresdefault.jpg" },
+      { title:"Tasha Cobbs Leonard - Break Every Chain", link:"https://youtu.be/ucY6NwQTI3M", thumbnail:"https://img.youtube.com/vi/ucY6NwQTI3M/maxresdefault.jpg" },
+      { title:"What A Beautiful Name - Hillsong Worship", link:"https://youtu.be/nQWFzMvCfLE", thumbnail:"https://img.youtube.com/vi/nQWFzMvCfLE/maxresdefault.jpg" },
+      { title:"You Are Yahweh ~ Steve Crown", link:"https://youtu.be/mCyN3Ty6_BE", thumbnail:"https://img.youtube.com/vi/mCyN3Ty6_BE/mqdefault.jpg" },
+            { title:"Who You Say I Am - Hillsong Worship", link:"https://youtu.be/lKw6uqtGFfo", thumbnail:"https://img.youtube.com/vi/lKw6uqtGFfo/maxresdefault.jpg" },
+      { title:"Praise by Elevation Worship", link:"https://youtu.be/f2oxGYpuLkw", thumbnail:"https://img.youtube.com/vi/f2oxGYpuLkw/maxresdefault.jpg" },
+      { title:"Zach Williams - No Longer Slaves", link:"https://youtu.be/bDnA_coA168", thumbnail:"https://img.youtube.com/vi/bDnA_coA168/maxresdefault.jpg" },
+    ]
+  },
+
+
+  {
+    name: "🩺 Divine Healing Testimonies",
+    videos: [
+      { title:"DEAD WOMAN RESTORED TO LIFE | PASTOR JERRY EZE | NSPPD", link:"https://youtu.be/N-1Ocup7B0Y", thumbnail:"https://img.youtube.com/vi/N-1Ocup7B0Y/maxresdefault.jpg" },            
+      { title:"HEALED OF COLON CANCER", link:"https://youtu.be/Dd4EjDNMD20", thumbnail:"https://img.youtube.com/vi/Dd4EjDNMD20/maxresdefault.jpg" },
+      { title:"Testimony of a Muslim convert about Jesus Christ @Redeem", link:"https://youtu.be/7x0rY4oDThw", thumbnail:"https://img.youtube.com/vi/7x0rY4oDThw/maxresdefault.jpg" },
+      { title:"The Testimony That Caught Pastor Jerry Off Guard", link:"https://youtu.be/3XxmYJlxIxI", thumbnail:"https://img.youtube.com/vi/3XxmYJlxIxI/mqdefault.jpg" },       
+      { title:"Pastor Jerry could not believe his ears", link:"https://youtu.be/BThJlTyn0tE", thumbnail:"https://img.youtube.com/vi/BThJlTyn0tE/mqdefault.jpg" },     
+      { title:"HEALED OF CHRONIC ULCER", link:"https://youtu.be/PCGUgSYAaR4", thumbnail:"https://img.youtube.com/vi/PCGUgSYAaR4/mqdefault.jpg" },
+      { title:"The Testimony That Caught Pastor Jerry Off Guard 😱 | NSPPD TESTIMONY", link:"https://youtu.be/3XxmYJlxIxI", thumbnail:"https://img.youtube.com/vi/3XxmYJlxIxI/mqdefault.jpg" },
+      { title:"I Thought I Was Mad Until The Native Drums And Strange Smell Began | Pastor Jerry Eze ", link:"https://youtu.be/RxAkCtbtFAw", thumbnail:"https://img.youtube.com/vi/RxAkCtbtFAw/mqdefault.jpg" },
+      { title:"They were about to harvest my organs | Pastor Jerry Eze ", link:"https://youtu.be/6czWiR4QaZA", thumbnail:"https://img.youtube.com/vi/6czWiR4QaZA/maxresdefault.jpg" },
+      { title:"My Husband rented a house and moved in with the girl. | Pastor Jerry Eze", link:"https://youtu.be/ITYivRQKkt8", thumbnail:"https://img.youtube.com/vi/ITYivRQKkt8/maxresdefault.jpg" },
+      { title:"NSPPD TESTIMONIES: INANIMATE OBJECTS RESTORED | PASTOR JERRY EZE", link:"https://youtu.be/3sipfPP5nAM", thumbnail:"https://img.youtube.com/vi/3sipfPP5nAM/mqdefault.jpg" },      
+      { title:"NSPPD Testimonies & live communion with Pastor Jerry Eze.", link:"https://youtu.be/d2clAEsyEyI", thumbnail:"https://img.youtube.com/vi/d2clAEsyEyI/mqdefault.jpg" },      
+      { title:"NSPPD TESTIMONIES: DAUGHTER RESTORED TO LIFE", link:"https://youtu.be/1FUcTqZV4Tw", thumbnail:"https://img.youtube.com/vi/1FUcTqZV4Tw/mqdefault.jpg" },
+      { title:"Cancer healed  by the mercies of God", link:"https://youtube.com/shorts/-6k2bvQQLLk", thumbnail:"https://img.youtube.com/vi/-6k2bvQQLLk/maxresdefault.jpg" },   
+      { title:"PASTOR JERRY EZE | NSPPD TESTIMONY | ZAINAB BALOGUN MIRACULOUSLY HEALED OF OVARIAN CYSTS", link:"https://youtu.be/1qIWGpByHv8", thumbnail:"https://img.youtube.com/vi/1qIWGpByHv8/mqdefault.jpg" },
+      { title:"A Born Muslim lady got Healed from Cancer of the Womb on NSPPD Fire Altar", link:"https://youtu.be/IvZ2iXo2j14", thumbnail:"https://img.youtube.com/vi/IvZ2iXo2j14/maxresdefault.jpg" },      
+      { title:"NSPPD Testimony: From “NO WOMB, NO HOPE” to Miracle Pregnancy! | Pastor Jerry Eze", link:"https://youtu.be/27Eb-LDrJfE", thumbnail:"https://img.youtube.com/vi/27Eb-LDrJfE/mqdefault.jpg" },
+      { title:"From Islam to Jesus—Her Father Shocking Reaction | NSPPD - Pastor Jerry Eze", link:"https://youtu.be/RFRFyxBuGnA", thumbnail:"https://img.youtube.com/vi/RFRFyxBuGnA/mqdefault.jpg" },
+      { title:"🔥🔥NSPPD Testimony - A Muslim Lady Miraculously Got Saved After Pst. Jerry Eze Prayed", link:"https://youtu.be/ONDrt1xMoYc", thumbnail:"https://img.youtube.com/vi/ONDrt1xMoYc/maxresdefault.jpg" },
+      { title:"I Almost Gave Up on Love… Until THIS Happened ll pastor Jerry Eze", link:"https://youtu.be/fsu8xvXzRf4", thumbnail:"https://img.youtube.com/vi/fsu8xvXzRf4/mqdefault.jpg" },
+      { title:"I Thought I Was Mad Until The Native Drums And Strange Smell Began", link:"https://youtu.be/RxAkCtbtFAw", thumbnail:"https://img.youtube.com/vi/RxAkCtbtFAw/mqdefault.jpg" },
+      { title:"I was Booked For Surgery But…Pastor Jerry Eze Shocked after His Testimony", link:"https://youtu.be/AsKUYLs8KJU", thumbnail:"https://img.youtube.com/vi/AsKUYLs8KJU/mqdefault.jpg" },
+    ]
+  },
+
+];
+
+
+const catalogue = document.getElementById("catalogue");
+
+subjects.forEach((subject, index) => {
+
+  const rowId = `row-${index}`;
+
+  const section = document.createElement("section");
+  section.className = "catalogue-section";
+
+  if(subject.name === "video-column"){
+      section.id = "home";
+  }
+
+  if(subject.name === "☪ From Islam To Jesus"){
+      section.id = "first";
+  }
+
+  if(subject.name === "ॐ From Hinduism To Jesus"){
+      section.id = "second";
+  }
+
+  if(subject.name === "🌍 Circles in The Secular"){
+      section.id = "fourth";
+  }
+
+  if(subject.name === "🌤️ Gospel of Salvation & Healing"){
+      section.id = "fifth";
+  }
+
+  if(subject.name === "📖 Audio Bible & Books 🎧"){
+      section.id = "sixth";
+  }
+
+  if(subject.name === "🎵 Songs"){
+      section.id = "seventh";
+  }
+
+  if(subject.name === "🩺 Divine Healing Testimonies"){
+      section.id = "eighth";
+  }
+
+  if(subject.name === "📱 Gospel Shorts"){
+      section.id = "nineth";
+  }  
+
+  if(subject.name === "📜 Meditation On Scriptures"){
+      section.id = "eleventh";
+  }
+
+  if(subject.name === "⬇️ Download or Share ➤"){
+      section.id = "tenth";
+  }
+
+  section.innerHTML = `
+    <h2 class="section-title">${subject.name}</h2>
+
+    <div class="video-row-wrapper">
+      <div class="video-row" id="${rowId}">
+        ${subject.videos.map(video => `
+          <div class="video-card">
+            <a
+              href="#"
+              class="thumbnail-link"
+              onclick="openVideo('${video.link}'); return false;"
+            >
+              <img src="${video.thumbnail}" class="thumbnail-image">
+              <div class="play-button"></div>
+            </a>
+            <div class="video-info">
+              <h3>${video.title}</h3>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+
+    <div class="scroll-buttons">
+      <button class="scroll-btn" onclick="move('${rowId}', -1)">⬅ Prev</button>
+      <button class="scroll-btn" onclick="move('${rowId}', 1)">Next ➡</button>
+    </div>
+  `;
+
+  catalogue.appendChild(section);
+
+  // 🔥 MAKE IT INFINITE
+  const row = section.querySelector(".video-row");
+
+  const originalContent = row.innerHTML;
+
+  // Clone content twice (key trick)
+  row.innerHTML += originalContent + originalContent;
+
+});
+
+function move(rowId, direction){
+
+  const row = document.getElementById(rowId);
+
+  const cardWidth = row.querySelector(".video-card").offsetWidth + 16;
+
+  row.scrollLeft += direction * cardWidth;
+
+  const maxScroll = row.scrollWidth / 3;
+
+  // reset when passing bounds
+  if (row.scrollLeft >= maxScroll * 2) {
+    row.scrollLeft = maxScroll;
+  }
+
+  if (row.scrollLeft <= 0) {
+    row.scrollLeft = maxScroll;
+  }
+}
+
+</script>
+
+
+<!-- Text for Shorts -->
+
+<script>
+  /* ================= SHORT VIDEOS ================= */
+
+const shortVideos = [
+    
+  {
+    title: "Was Jesus the Word in Genesis? (John 1:1 Mystery Explained)?",
+    link: "https://www.youtube.com/shorts/IORit5L8pLA",
+    thumbnail: "https://img.youtube.com/vi/IORit5L8pLA/maxresdefault.jpg"
+  },
+
+  {
+    title: "Why Did the Graves Open When Jesus Died? (Matthew 27 Mystery)",
+    link: "https://youtube.com/shorts/mwdaKlLl6aY",
+    thumbnail: "https://img.youtube.com/vi/mwdaKlLl6aY/maxresdefault.jpg"
+  },
+
+  {
+    title: "Why Was the Temple Veil Torn When Jesus Died? (Matthew 27 Mystery)",
+    link: "https://www.youtube.com/shorts/zoFOcsjq71M",
+    thumbnail: "https://img.youtube.com/vi/zoFOcsjq71M/maxresdefault.jpg"
+  },
+
+  {
+    title: 'Why did Jesus cry "My God, My God, why have You forsaken Me?" from the cross?',
+    link: "https://www.youtube.com/shorts/WS615y9EDU0",
+    thumbnail: "https://img.youtube.com/vi/WS615y9EDU0/maxresdefault.jpg"
+  },
+    
+  {
+    title: "What Did Jesus Do for 3 Days in the Grave?",
+    link: "https://www.youtube.com/shorts/PAigwlJAjOU",
+    thumbnail: "https://img.youtube.com/vi/PAigwlJAjOU/maxresdefault.jpg"
+  },
+    
+  {
+    title: "Why Did Blood and Water Come From Jesus' Side? (John 19 Mystery)",
+    link: "https://www.youtube.com/shorts/oAuzWo5wlVE",
+    thumbnail: "https://img.youtube.com/vi/oAuzWo5wlVE/maxresdefault.jpg"
+  },
+    
+  {
+    title: "Why Did Jesus Weep If He Knew Lazarus Would Rise? (John 11 Mystery)",
+    link: "https://www.youtube.com/shorts/2WkmNphDYgI",
+    thumbnail: "https://img.youtube.com/vi/2WkmNphDYgI/maxresdefault.jpg"
+  },    
+
+  {
+    title: "Was Jesus one of the three men who visited Abraham in Genesis 18? 👁️🔥",
+    link: "https://www.youtube.com/shorts/RuNpc8fviZs",
+    thumbnail: "https://img.youtube.com/vi/RuNpc8fviZs/maxresdefault.jpg"
+  },
+
+  {
+    title: "Nabeel Qureshi PROVES The Trinity Is NOT A Contradiction",
+    link: "https://youtube.com/shorts/o1Ohewg5ulU",
+    thumbnail: "https://img.youtube.com/vi/o1Ohewg5ulU/maxresdefault.jpg"
+  },
+
+  {
+    title: "One Question Made Her RETHINK Islam 😮",
+    link: "https://youtube.com/shorts/x54KKYcE3JY",
+    thumbnail: "https://img.youtube.com/vi/x54KKYcE3JY/maxresdefault.jpg"
+  },
+
+  {
+    title: "Raising the Dead In An Airplane – Rev. Mosy Madugba Tells the Shocking Story",
+    link: "https://youtube.com/shorts/v8iNA0m_Pr8",
+    thumbnail: "https://img.youtube.com/vi/v8iNA0m_Pr8/maxresdefault.jpg"
+  },
+
+  {
+    title: "untold miracle story of Bishop Benson Idahosa",
+    link: "https://youtube.com/shorts/JOGhIpuwvzU",
+    thumbnail: "https://img.youtube.com/vi/JOGhIpuwvzU/maxresdefault.jpg"
+  },
+
+  {
+    title: "Spirit and Soul",
+    link: "https://youtube.com/shorts/r11u_3BbpEw",
+    thumbnail: "https://img.youtube.com/vi/r11u_3BbpEw/maxresdefault.jpg"
+  },
+
+  {
+    title: "LEARN TO WALK IN LOVE ❤️ -  APOSTLE JOSHUA SELMAN",
+    link: "https://youtube.com/shorts/rnY1f9xrm-E",
+    thumbnail: "https://img.youtube.com/vi/rnY1f9xrm-E/maxresdefault.jpg"
+  },
+
+  {
+    title: "Who Are the Two Witnesses in Revelation 11?",
+    link: "https://youtube.com/shorts/etaA054RLS4",
+    thumbnail: "https://img.youtube.com/vi/etaA054RLS4/maxresdefault.jpg"
+  },
+
+];
+
+
+/* ================= BUILD SHORTS ================= */
+
+const shortsRow = document.getElementById("shortsRow");
+
+shortsRow.innerHTML = shortVideos.map(video => `
+
+  <div class="short-card">
+
+      <a
+        href="#"
+        class="short-thumbnail-link"
+        onclick="openVideo('${video.link}', true); return false;"
+      >
+
+      <img
+        src="${video.thumbnail}"
+        alt="${video.title}"
+        class="short-thumbnail"
+      >
+
+      <div class="short-play-button"></div>
+
+    </a>
+
+    <div class="short-info">
+      <h4>${video.title}</h4>
+    </div>
+
+  </div>
+
+`).join("");
+
+
+
+/* Duplicate for infinite effect */
+
+shortsRow.innerHTML += shortsRow.innerHTML;
+
+
+
+/* ================= ONE SLIDE SHORT VIDEO MOVEMENT ================= */
+
+
+let shortsPosition = 0;
+
+function moveShorts(direction){
+
+  const row = document.getElementById("shortsRow");
+
+  const card = row.querySelector(".short-card");
+
+
+  if(!card) return;
+
+  // Get exact width including gap
+  const slideWidth =
+  card.getBoundingClientRect().width + 16;
+
+
+  shortsPosition += direction;
+
+
+  const totalSlides =
+  shortVideos.length;
+
+
+  // Infinite forward loop
+
+  if(shortsPosition >= totalSlides){
+
+      shortsPosition = 0;
+
+  }
+
+
+  // Infinite backward loop
+
+  if(shortsPosition < 0){
+
+      shortsPosition = totalSlides - 1;
+
+  }
+
+
+  row.scrollTo({
+
+      left:
+      shortsPosition * slideWidth,
+
+      behavior:"smooth"
+
+  });
+
+}
+</script>
+
+
+<!-- Script for Text Loop -->
+<script>
+
+/* ================= ONE SLIDE TEXT MOVEMENT ================= */
+
+
+const textRow = document.getElementById("textRow");
+
+
+// Duplicate for infinite effect
+textRow.innerHTML += textRow.innerHTML;
+
+
+
+let textPosition = 0;
+
+
+
+function moveText(direction){
+
+
+  const row = document.getElementById("textRow");
+
+
+  const card = row.querySelector(".text-card");
+
+
+  if(!card) return;
+
+
+
+  // Get exact card width + gap
+
+  const slideWidth =
+  card.getBoundingClientRect().width + 16;
+
+
+
+  textPosition += direction;
+
+
+
+  // Original number of cards
+
+  const totalSlides =
+  row.children.length / 2;
+
+
+
+  // Move forward
+
+  if(textPosition >= totalSlides){
+
+      textPosition = 0;
+
+  }
+
+
+
+  // Move backward
+
+  if(textPosition < 0){
+
+      textPosition = totalSlides - 1;
+
+  }
+
+
+
+  row.scrollTo({
+
+      left:
+      textPosition * slideWidth,
+
+      behavior:"smooth"
+
+  });
+
+
+}
+
+
+
+</script>
+
+
+<!-- script for downloading page -->
+<script>
+function downloadPage() {
+
+  // Get full HTML of current page
+  const pageHTML = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+  // Create a blob (file container)
+  const blob = new Blob([pageHTML], { type: "text/html" });
+
+  // Create download link
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+
+  a.href = url;
+  a.download = "📖 Gospel & Salvation💡.html";
+
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+
+}
+</script>
+
+
+<!-- VIDEO POPUP -->
+
+<div id="videoModal" class="video-modal">
+
+  <div class="video-modal-content">
+
+    <button
+      class="modal-close"
+      onclick="closeVideo()"
+    >
+      ✕
+    </button>
+
+<iframe
+  id="videoPlayer"
+  allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* ================= VIDEO POPUP ================= */
+
+const modal =
+document.getElementById("videoModal");
+
+const player =
+document.getElementById("videoPlayer");
+
+function convertToEmbed(url){
+
+  const autoplay =
+  "?autoplay=1&rel=0&playsinline=1";
+
+  /* Normal YouTube */
+
+  if(url.includes("youtube.com/watch?v=")){
+
+    const id =
+    url.split("v=")[1].split("&")[0];
+
+    return `https://www.youtube.com/embed/${id}${autoplay}`;
+  }
+
+  /* YouTube Shorts */
+
+  if(url.includes("/shorts/")){
+
+    const id =
+    url.split("/shorts/")[1].split("?")[0];
+
+    return `https://www.youtube.com/embed/${id}${autoplay}`;
+  }
+
+  /* youtu.be */
+
+  if(url.includes("youtu.be/")){
+
+    const id =
+    url.split("youtu.be/")[1].split("?")[0];
+
+    return `https://www.youtube.com/embed/${id}${autoplay}`;
+  }
+
+  /* Google Drive */
+
+  if(url.includes("drive.google.com")){
+
+    const match =
+    url.match(/\/d\/(.*?)\//);
+
+    if(match){
+
+      return `https://drive.google.com/file/d/${match[1]}/preview`;
+    }
+  }
+
+  return url;
+}
+
+function openVideo(url, isShort = false){
+
+  // Detect mobile device
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+  // If mobile AND Google Drive video
+  if(isMobile && url.includes("drive.google.com")){
+    window.open(url, "_blank");
+    return;
+  }
+
+  // Existing popup behavior
+  modal.classList.add("active");
+
+  if(isShort){
+    modal.classList.add("vertical");
+  }else{
+    modal.classList.remove("vertical");
+  }
+
+  player.src = convertToEmbed(url);
+}
+
+function closeVideo(){
+
+  modal.classList.remove("active");
+
+  player.src = "";
+}
+
+/* Close when background clicked */
+
+modal.addEventListener("click",function(e){
+
+  if(e.target === modal){
+
+    closeVideo();
+  }
+
+});
+
+/* Escape key closes */
+
+document.addEventListener("keydown",function(e){
+
+  if(e.key==="Escape"){
+
+    closeVideo();
+  }
+
+});
+
+</script>
+
+<!-- script for scroll to section -->
+<script>
+  function goToSection(id){
+
+  const target = document.getElementById(id);
+
+  if(!target) return;
+
+  const headerHeight =
+      document.querySelector("header").offsetHeight;
+
+  const targetPosition =
+      target.getBoundingClientRect().top +
+      window.pageYOffset -
+      headerHeight -
+      2;
+
+  window.scrollTo({
+    top: targetPosition,
+    behavior: "smooth"
+  });
+
+}
+</script>
+
+<script>
+/* ================= ACTION ROW SCROLL ================= */
+
+function moveActions(direction){
+
+  /* Get it fresh each call — avoids the null-at-load-time problem */
+  const actionRow = document.getElementById("actionRow");
+  if(!actionRow) return; /* safety: do nothing if element not found */
+
+  /* Find first child regardless of whether it's <a> or <button> */
+  const firstBtn = actionRow.firstElementChild;
+  if(!firstBtn) return;
+
+  const cardWidth = firstBtn.getBoundingClientRect().width + 16;
+
+  actionRow.scrollLeft += direction * cardWidth;
+}
+
+/* Copy link button */
+function copyLink(){
+  navigator.clipboard.writeText("https://wordof-life.github.io/gift/")
+    .then(() => alert("Link copied to clipboard! 📋"))
+    .catch(() => alert("Could not copy link. Please copy manually."));
+}
+</script>
+
+<script>
+  
+</script>
+
+</body>
+</html>
