@@ -1417,23 +1417,40 @@ No one comes to the Father except through me. <br>
 </section>
 
   <!-- Heading 1 Column Slider -->
-  <script>
-    let introSliderIndex = 0;
+<script>
+  let introSliderIndex = 0;
+  let introTouchStartX = 0;
+  let introTouchEndX = 0;
 
-  function moveIntroSlider(direction){
+  function moveIntroSlider(direction) {
     const slider = document.getElementById("introVideoSlider");
     const slides = slider.querySelectorAll(".video-slide");
     const total = slides.length;
 
     introSliderIndex += direction;
 
-    // Loop back around at either end
-    if(introSliderIndex < 0) introSliderIndex = total - 1;
-    if(introSliderIndex >= total) introSliderIndex = 0;
+    if (introSliderIndex < 0) introSliderIndex = total - 1;
+    if (introSliderIndex >= total) introSliderIndex = 0;
 
     slider.style.transform = `translateX(-${introSliderIndex * 100}%)`;
   }
-  </script>
+
+  // Swipe support
+  const introSlider = document.getElementById("introVideoSlider");
+
+  introSlider.addEventListener("touchstart", (e) => {
+    introTouchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  introSlider.addEventListener("touchend", (e) => {
+    introTouchEndX = e.changedTouches[0].screenX;
+    const diff = introTouchStartX - introTouchEndX;
+
+    if (Math.abs(diff) > 40) {          // 40px threshold to ignore tiny taps
+      moveIntroSlider(diff > 0 ? 1 : -1);
+    }
+  }, { passive: true });
+</script>
 
 <!-- Full Video Sliders -->
 <script>
